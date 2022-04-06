@@ -6,5 +6,5 @@ import About from "../components/About.vue";
 
 <template>
   <a href="/login">Login</a> |
-  <a href="/about">About</a> |
+  <a href="/about">About</a>
 </template> -->

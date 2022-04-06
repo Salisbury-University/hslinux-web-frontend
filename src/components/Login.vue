@@ -4,41 +4,38 @@ import { useCounterStore } from "../stores/counter";
 
 const store = useCounterStore();
 
-const name: string = "asd";
-const pass: string = "gfasd";
+const storedName = ref("");
+const storedPassword = ref("");
 
-const name2 = ref("");
-const pass2 = ref("");
+const textName = ref("");
+const textPassword = ref("");
 
 function submit(){
-  name2.value = name;
-  pass2.value = pass;
+  storedName.value = textName.value;
+  storedPassword.value = textPassword.value;
 }
 
 </script>
 
 <template>
   <div>
-    <p>Username : {{ name2 }}</p>
-    <p>Password : {{ pass2 }}</p>
+    <p>Username : {{ storedName }}</p>
+    <p>Password : {{ storedPassword }}</p>
   </div>
 
   <div>
     <p>Username</p>
-    <input v-model="name">
+    <input v-model="textName" placeHolder="Type here">
   </div>
   
   <div>
     <p>Password</p>
-    <input v-model="pass">
+    <input v-model="textPassword" placeHolder="Type here">
   </div>
 
   <div>
     <button @click="submit">Submit</button>
   </div>
-
-  
-  
 </template>
 
 <style scoped>

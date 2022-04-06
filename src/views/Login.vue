@@ -6,4 +6,5 @@
 
 <template>
   <Login/>
+  <a href="/">Home</a>
 </template>
