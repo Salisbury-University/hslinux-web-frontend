@@ -1,10 +1,9 @@
 <script setup lang="ts">
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-import About from "../components/About.vue";
+import HomeLayout from "../layouts/HomeLayout.vue"
 </script>
 
 <template>
-  <a href="/login">Login</a> |
-  <a href="/about">About</a>
-</template> -->
+  <HomeLayout/>
+</template>
