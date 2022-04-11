@@ -21,7 +21,7 @@
     </q-header>
 
     <q-drawer show-if-above v-model="leftDrawerOpen" side="left" bordered>
-      <!-- drawer content -->
+      <LeftDrawer/>
     </q-drawer>
 
     <q-page-container>
@@ -42,19 +42,20 @@
   </q-layout>
 </template>
 
-<script>
+<script lang="ts">
 import { ref } from 'vue'
+import LeftDrawer from "../components/LeftDrawer.vue"
 
 export default {
-  setup () {
-    const leftDrawerOpen = ref(false)
-
-    return {
-      leftDrawerOpen,
-      toggleLeftDrawer () {
-        leftDrawerOpen.value = !leftDrawerOpen.value
-      }
-    }
-  }
+    setup() {
+        const leftDrawerOpen = ref(false);
+        return {
+            leftDrawerOpen,
+            toggleLeftDrawer() {
+                leftDrawerOpen.value = !leftDrawerOpen.value;
+            }
+        };
+    },
+    components: { LeftDrawer }
 }
 </script>
