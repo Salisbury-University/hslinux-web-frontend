@@ -15,8 +15,8 @@
 
       <q-tabs align="left">
         <q-route-tab to="/Login" label="Login" />
-        <q-route-tab to="/page2" label="Page Two" />
-        <q-route-tab to="/page3" label="Page Three" />
+        <q-route-tab to="/About" label="About" />
+        <q-route-tab to="/page3" label="Student" />
       </q-tabs>
     </q-header>
 
@@ -34,7 +34,7 @@
           <q-avatar>
             <!--<img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg"> place an image here-->
           </q-avatar>
-          <div>Title</div>
+          <div></div>
         </q-toolbar-title>
       </q-toolbar>
     </q-footer>

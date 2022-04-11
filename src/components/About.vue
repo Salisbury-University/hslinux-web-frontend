@@ -8,7 +8,7 @@ defineProps<{ msg: string }>();
 
 <template>
   <h1>{{ msg }}</h1>
-  <h1>Gameing</h1>
+  <h1>Weenies</h1>
 </template>
 
 <style scoped>
