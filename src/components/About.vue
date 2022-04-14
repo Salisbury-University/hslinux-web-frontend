@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import { useCounterStore } from "../stores/counter";
-
-const store = useCounterStore();
+// import { useCounterStore } from "../stores/counter";
 
 defineProps<{ msg: string }>();
 </script>
