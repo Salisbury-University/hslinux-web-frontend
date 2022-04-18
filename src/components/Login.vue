@@ -18,6 +18,7 @@ function submit(){
 </script>
 
 <template>
+<q-page>
   <div>
     <p>Username : {{ storedName }}</p>
     <p>Password : {{ storedPassword }}</p>
@@ -36,6 +37,7 @@ function submit(){
   <div>
     <button @click="submit">Submit</button>
   </div>
+  </q-page>
 </template>
 
 <style scoped>

@@ -7,8 +7,10 @@ defineProps<{ msg: string }>();
 </script>
 
 <template>
+  <q-page>
   <h1>{{ msg }}</h1>
   <h1>Weenies</h1>
+  </q-page>
 </template>
 
 <style scoped>

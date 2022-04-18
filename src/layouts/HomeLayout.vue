@@ -25,7 +25,7 @@
     </q-drawer>
 
     <q-page-container>
-      <slot name ="PageContents"></slot>
+      <router-view></router-view>
     </q-page-container>
 
     <q-footer elevated class="bg-grey-8 text-white">
