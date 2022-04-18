@@ -7,7 +7,7 @@
 
         <q-toolbar-title>
           <q-avatar>
-            <!--image goes here<img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">-->
+            <!--image goes here-->
           </q-avatar>
           Salisbury Wiki IT
         </q-toolbar-title>
@@ -15,7 +15,6 @@
 
       <q-tabs align="left">
         <q-route-tab to="/Login" label="Login" />
-        <q-route-tab to="/About" label="About" />
         <q-route-tab to="/Testing" label="Testing" />
       </q-tabs>
     </q-header>
@@ -32,7 +31,7 @@
       <q-toolbar>
         <q-toolbar-title>
           <q-avatar>
-            <!--<img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg"> place an image here-->
+            <!--place an image here-->
           </q-avatar>
           <div></div>
         </q-toolbar-title>
@@ -56,4 +55,3 @@ const leftDrawerOpen = ref(false);
        
 
 </script>
-<!--wrap layout in slot or jung group-->
