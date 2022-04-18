@@ -1,16 +1,3 @@
-<script setup lang="ts">
-import { ref } from 'vue'
-import LeftDrawer from "../components/LeftDrawer.vue"
-
-const leftDrawerOpen = ref(false);
-
-toggleLeftDrawer() {
-    leftDrawerOpen.value = !leftDrawerOpen.value;
-}
-
-// const components: { LeftDrawer }
-</script>
-
 <template>
   <q-layout view="hHh lpR fFf">
 
@@ -20,7 +7,7 @@ toggleLeftDrawer() {
 
         <q-toolbar-title>
           <q-avatar>
-            <!--image goes here<img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">-->
+            <!--image goes here-->
           </q-avatar>
           Salisbury Wiki IT
         </q-toolbar-title>
@@ -28,8 +15,7 @@ toggleLeftDrawer() {
 
       <q-tabs align="left">
         <q-route-tab to="/Login" label="Login" />
-        <q-route-tab to="/About" label="About" />
-        <q-route-tab to="/page3" label="Student" />
+        <q-route-tab to="/Testing" label="Testing" />
       </q-tabs>
     </q-header>
 
@@ -38,14 +24,14 @@ toggleLeftDrawer() {
     </q-drawer>
 
     <q-page-container>
-      <router-view />
+      <router-view></router-view>
     </q-page-container>
 
     <q-footer elevated class="bg-grey-8 text-white">
       <q-toolbar>
         <q-toolbar-title>
           <q-avatar>
-            <!--<img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg"> place an image here-->
+            <!--place an image here-->
           </q-avatar>
           <div></div>
         </q-toolbar-title>
@@ -54,3 +40,18 @@ toggleLeftDrawer() {
 
   </q-layout>
 </template>
+
+<script setup lang="ts">
+import { ref } from 'vue'
+import LeftDrawer from "../components/LeftDrawer.vue"
+import PageContents from "../components/PageContents.vue"
+   
+const leftDrawerOpen = ref(false);
+
+  function toggleLeftDrawer(){
+
+        leftDrawerOpen.value = !leftDrawerOpen.value;
+    }
+       
+
+</script>
