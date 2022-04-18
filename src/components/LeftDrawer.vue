@@ -1,4 +1,5 @@
 <template>
-    left drawer contents
-    
+    <div class="LeftDrawer">
+        Left Drawer Contents
+    </div>
 </template>

@@ -16,7 +16,7 @@
       <q-tabs align="left">
         <q-route-tab to="/Login" label="Login" />
         <q-route-tab to="/About" label="About" />
-        <q-route-tab to="/page3" label="Student" />
+        <q-route-tab to="/Testing" label="Testing" />
       </q-tabs>
     </q-header>
 
@@ -25,7 +25,7 @@
     </q-drawer>
 
     <q-page-container>
-      <router-view />
+      <slot name ="PageContents"></slot>
     </q-page-container>
 
     <q-footer elevated class="bg-grey-8 text-white">
@@ -42,20 +42,18 @@
   </q-layout>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import { ref } from 'vue'
 import LeftDrawer from "../components/LeftDrawer.vue"
+import PageContents from "../components/PageContents.vue"
+   
+const leftDrawerOpen = ref(false);
 
-export default {
-    setup() {
-        const leftDrawerOpen = ref(false);
-        return {
-            leftDrawerOpen,
-            toggleLeftDrawer() {
-                leftDrawerOpen.value = !leftDrawerOpen.value;
-            }
-        };
-    },
-    components: { LeftDrawer }
-}
+  function toggleLeftDrawer(){
+
+        leftDrawerOpen.value = !leftDrawerOpen.value;
+    }
+       
+
 </script>
+<!--wrap layout in slot or jung group-->
