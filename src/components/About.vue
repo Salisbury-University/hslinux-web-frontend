@@ -1,14 +1,13 @@
 <script setup lang="ts">
-import { useCounterStore } from "../stores/counter";
-
-const store = useCounterStore();
 
 defineProps<{ msg: string }>();
 </script>
 
 <template>
-  <h1>{{ msg }}</h1>
-  <h1>Weenies</h1>
+  <div>
+    <h1>{{ msg }}</h1>
+    <h1>Weenies</h1>
+  </div>
 </template>
 
 <style scoped>

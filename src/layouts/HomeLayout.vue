@@ -1,3 +1,16 @@
+<script setup lang="ts">
+import { ref } from 'vue'
+import LeftDrawer from "../components/LeftDrawer.vue"
+
+const leftDrawerOpen = ref(false);
+
+toggleLeftDrawer() {
+    leftDrawerOpen.value = !leftDrawerOpen.value;
+}
+
+// const components: { LeftDrawer }
+</script>
+
 <template>
   <q-layout view="hHh lpR fFf">
 
@@ -41,21 +54,3 @@
 
   </q-layout>
 </template>
-
-<script lang="ts">
-import { ref } from 'vue'
-import LeftDrawer from "../components/LeftDrawer.vue"
-
-export default {
-    setup() {
-        const leftDrawerOpen = ref(false);
-        return {
-            leftDrawerOpen,
-            toggleLeftDrawer() {
-                leftDrawerOpen.value = !leftDrawerOpen.value;
-            }
-        };
-    },
-    components: { LeftDrawer }
-}
-</script>

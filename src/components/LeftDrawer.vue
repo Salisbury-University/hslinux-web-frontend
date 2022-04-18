@@ -1,4 +1,9 @@
+<script setup lang="ts">
+
+</script>
+
 <template>
-    left drawer contents
-    
+    <div>
+        left drawer contents
+    </div>
 </template>

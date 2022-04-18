@@ -5,6 +5,8 @@
 </script>
 
 <template>
-  <Login/>
-  <a href="/">Home</a>
+  <div>
+    <Login/>
+    <router-link to="/">Home</router-link>
+  </div>
 </template>
