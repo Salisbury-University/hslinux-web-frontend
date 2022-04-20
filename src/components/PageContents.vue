@@ -1,5 +1,5 @@
 <template>
     <q-page>
-        page content
+        Page contents
     </q-page>
 </template>

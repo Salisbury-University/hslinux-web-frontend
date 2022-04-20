@@ -16,8 +16,8 @@ const routes: Array<RouteRecordRaw> = [
         component: PageContents,
       },
       {
-        path: "Testing",
-        component: Testing,
+        path: "PageContents",
+        component: PageContents,
       },
       {
         path: "Login",

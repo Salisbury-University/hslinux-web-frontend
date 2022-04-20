@@ -14,8 +14,8 @@
       </q-toolbar>
 
       <q-tabs align="left">
+        <q-route-tab to="/PageContents" label="Home" />
         <q-route-tab to="/Login" label="Login" />
-        <q-route-tab to="/Testing" label="Testing" />
       </q-tabs>
     </q-header>
 

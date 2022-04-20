@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <div class="LeftDrawer">
+    <div>
         Left Drawer Contents
     </div>
 </template>
