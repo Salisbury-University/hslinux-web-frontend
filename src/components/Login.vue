@@ -1,26 +1,19 @@
 <script setup lang="ts">
 import { ref } from "vue"
 
-const storedName = ref("");
-const storedPassword = ref("");
-
 const textName = ref("");
 const textPassword = ref("");
 
-function submit(){
-  storedName.value = textName.value;
-  storedPassword.value = textPassword.value;
-}
+// Login is going to have to take the username and passwords that are submitted by the user, and send them
+// to the backend as a request to see if it is valid and what kind of access the user has to the wiki (student, 
+// faculty, admin, etc...)
+
+// Right now it only takes the username and password and stores them, going to work on sending it to the backend
 
 </script>
 
 <template>
 <q-page>
-  <div>
-    <p>Username : {{ storedName }}</p>
-    <p>Password : {{ storedPassword }}</p>
-  </div>
-
   <div>
     <p>Username</p>
     <input v-model="textName" placeHolder="Type here">
@@ -28,7 +21,7 @@ function submit(){
   
   <div>
     <p>Password</p>
-    <input v-model="textPassword" placeHolder="Type here">
+    <input type="password" v-model="textPassword" placeHolder="Type here">
   </div>
 
   <div>
