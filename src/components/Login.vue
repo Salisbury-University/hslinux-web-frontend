@@ -31,7 +31,7 @@ function submit(){
   <div>
     <button @click="submit">Submit</button>
   </div>
-  </q-page>
+</q-page>
 </template>
 
 
