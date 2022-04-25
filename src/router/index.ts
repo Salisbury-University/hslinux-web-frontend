@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 
 import HomeLayout from "../layouts/HomeLayout.vue";
-import PageContents from "../components/PageContents.vue";
+import PageContents from "../views/PageContents.vue";
 import Login from "../components/Login.vue";
 
 const routes: Array<RouteRecordRaw> = [
@@ -21,7 +21,7 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: "Login",
         component: Login,
-      }
+      },
     ],
   },
 ];
