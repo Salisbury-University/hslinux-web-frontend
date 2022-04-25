@@ -2,7 +2,7 @@ import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 
 import HomeLayout from "../layouts/HomeLayout.vue";
 import PageContents from "../views/PageContents.vue";
-import Login from "../components/Login.vue";
+import Login from "../views/Login.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {

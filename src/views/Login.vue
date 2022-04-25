@@ -5,8 +5,9 @@
 </script>
 
 <template>
+<q-page>
   <div>
     <Login/>
-    <router-link to="/">Home</router-link>
   </div>
+</q-page>
 </template>

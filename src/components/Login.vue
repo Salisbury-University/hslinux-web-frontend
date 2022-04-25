@@ -17,7 +17,6 @@ function submit(){
 </script>
 
 <template>
-<q-page>
   <div>
     <p>Username</p>
     <input v-model="textName" placeHolder="Type here">
@@ -31,7 +30,6 @@ function submit(){
   <div>
     <button @click="submit">Submit</button>
   </div>
-</q-page>
 </template>
 
 

@@ -1,3 +1,11 @@
+<script setup lang="ts">
+  import PageContents from "../components/PageContents.vue";
+</script>
+
 <template>
-  <q-page> Page contents </q-page>
+    <q-page>
+    <div>
+        <PageContents/>
+    </div>
+    </q-page>
 </template>
