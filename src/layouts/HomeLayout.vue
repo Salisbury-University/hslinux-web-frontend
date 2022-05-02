@@ -13,7 +13,7 @@
       </q-toolbar>
 
       <q-tabs align="left">
-        <q-route-tab to="../views/PageContents" label="Home" />
+        <q-route-tab to="../views/PageContents/" label="Home" />
         <q-route-tab to="/Login" label="Login" />
       </q-tabs>
     </q-header>

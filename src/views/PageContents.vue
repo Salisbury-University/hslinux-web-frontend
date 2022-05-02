@@ -3,9 +3,9 @@
 </script>
 
 <template>
-    <q-page>
+  <q-page>
     <div>
         <PageContents/>
     </div>
-    </q-page>
+  </q-page>
 </template>
