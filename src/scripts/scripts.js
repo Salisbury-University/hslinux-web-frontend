@@ -1,6 +1,8 @@
 import axios from 'axios';
 
 const req = async () => {
-    const response = await axios.get('/api/v1/doc/:id')
+    const response = await axios.get('/api/vi/doc/:id')
     console.log(response)
 }
+
+export default req;
