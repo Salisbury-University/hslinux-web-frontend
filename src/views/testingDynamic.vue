@@ -1,10 +1,10 @@
 <script lang="ts">
-import req from "../scripts/scripts.js"
+import req from "../scripts/scripts"
 </script>
 
 <template>
     <div>
         testingDynamic {{ $route.params.id }}
-        <button onclick="req">Click Me</button>
+        <button @click=req>Click Me</button>
     </div>
 </template>
