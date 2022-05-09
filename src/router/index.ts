@@ -1,12 +1,30 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 
-import Index from "../views/Index.vue";
+import HomeLayout from "../layouts/HomeLayout.vue";
+import PageContents from "../views/PageContents.vue";
+import Login from "../views/Login.vue";
+import testingDynamic from "../views/testingDynamic.vue"
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
-    component: Index,
+    component: HomeLayout,
+    children: [
+      {
+        //landing page
+        path: "",
+        component: PageContents,
+      },
+      {
+        path: "Login",
+        component: Login,
+      },
+    ],
+
   },
+  
+  { path: "/testingDynamic/:id", component: testingDynamic },
+
 ];
 
 const router = createRouter({
