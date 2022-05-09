@@ -7,4 +7,8 @@ import req from "../scripts/scripts"
         testingDynamic {{ $route.params.id }}
         <button @click=req>Click Me</button>
     </div>
+
+    <div id="pageContents">
+        
+    </div>
 </template>

@@ -1,8 +1,14 @@
 import axios from 'axios';
 
 const req = async () => {
-    const response = await axios.get('/api/vi/doc/:id')
-    console.log(response)
+    axios.get('/api/vi/doc/:id')
+    .then((res) => {
+        return res.data.content; 
+    })
+    .catch((error) =>{
+        console.error(error);
+    })   
 }
 
 export default req;
+//.then capture response 
