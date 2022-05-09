@@ -1,9 +1,9 @@
-<script lang="ts">
+<script setup lang="ts">
 import req from "../scripts/scripts";
 
 import { ref } from "vue";
 
-const markdown = "<div class='text' id='marked'>hello world</div>";
+var markdown = "<div class='text' id='marked'>hello world</div>";
 </script>
 
 <template>
