@@ -3,13 +3,13 @@ import req from "../scripts/scripts";
 
 import { ref } from "vue";
 
-var markdown = "<div class='text' id='marked'>hello world</div>";
+const markdown = ref("");
 </script>
 
 <template>
   <div>
     testingDynamic {{ $route.params.id }}
-    <button @click="req">Click Me</button>
+    <button @click="markdown = req">Click Me</button>
   </div>
 
   <div v-html="markdown"></div>

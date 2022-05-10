@@ -1,5 +1,5 @@
 import axios from "axios";
-//const marked = require('marked');
+import { marked } from "marked";
 
 const req = async () => {
   axios
