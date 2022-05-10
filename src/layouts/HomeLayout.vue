@@ -14,7 +14,11 @@
 
       <q-tabs align="left">
         <q-route-tab to="../views/PageContents" label="Home" />
-        <q-route-tab to="/Login" label="Login" />
+        <q-route-tab
+          to="/Login"
+          label="Login"
+          v-if="store.persistence.showLogin"
+        />
       </q-tabs>
     </q-header>
 
@@ -43,8 +47,10 @@
 import { ref } from "vue";
 import LeftDrawer from "../components/LeftDrawer.vue";
 import PageContents from "../views/PageContents.vue";
+import { useAuthStore } from "../stores/auth.ts";
 
 const leftDrawerOpen = ref(false);
+const store = useAuthStore();
 
 function toggleLeftDrawer() {
   leftDrawerOpen.value = !leftDrawerOpen.value;

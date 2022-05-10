@@ -7,10 +7,14 @@ const store = useAuthStore();
 function submit() {
   store.login();
 }
+
+function logout() {
+  store.logout();
+}
 </script>
 
 <template>
-  <q-page>
+  <q-page v-if="store.persistence.showLogin">
     <div>
       <p>Username</p>
       <input v-model="store.uid" placeHolder="Type here" />
