@@ -9,7 +9,7 @@ const markdown = ref("");
 <template>
   <div>
     testingDynamic {{ $route.params.id }}
-    <button @click="markdown = req">Click Me</button>
+    <button @click="req;">Click Me</button>
   </div>
 
   <div v-html="markdown"></div>

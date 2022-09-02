@@ -5,7 +5,7 @@ const req = async () => {
   axios
     .get("/api/vi/doc/:id")
     .then((res) => {
-      return marked.parse(res.data.content);
+      console.log(res.data.content);
     })
     .catch((error) => {
       console.error(error);
