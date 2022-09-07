@@ -1,11 +1,12 @@
 import axios from "axios";
+import http from "../../http";
 import { marked } from "marked";
 
 const req = async () => {
   axios
-    .get("/api/vi/doc/:id")
+    .get("/api/v1/doc/:id")
     .then((res) => {
-      console.log(res.data.content);
+      console.log(marked.parse(res.data.content));
     })
     .catch((error) => {
       console.error(error);
