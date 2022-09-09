@@ -3,7 +3,7 @@ import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import HomeLayout from "../layouts/HomeLayout.vue";
 import PageContents from "../views/PageContents.vue";
 import Login from "../views/Login.vue";
-import testingDynamic from "../views/testingDynamic.vue"
+import testingDynamic from "../views/testingDynamic.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -19,12 +19,15 @@ const routes: Array<RouteRecordRaw> = [
         path: "Login",
         component: Login,
       },
+      {
+        /**
+         * The dynamic route is a page to test dynamic pages for the markdown files
+         */
+        path: "testingDynamic/:id",
+        component: testingDynamic,
+      },
     ],
-
   },
-  
-  { path: "/testingDynamic/:id", component: testingDynamic },
-
 ];
 
 const router = createRouter({

@@ -15,6 +15,7 @@
       <q-tabs align="left">
         <q-route-tab to="../views/PageContents/" label="Home" />
         <q-route-tab to="/Login" label="Login" />
+        <q-route-tab to="../views/testingDynamic/" label="Dynamic" />
       </q-tabs>
     </q-header>
 
@@ -42,7 +43,8 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import LeftDrawer from "../components/LeftDrawer.vue";
-import PageContents from "../views/PageContents.vue";
+
+import testingDynamic from "../views/testingDynamic.vue";
 
 const leftDrawerOpen = ref(false);
 
