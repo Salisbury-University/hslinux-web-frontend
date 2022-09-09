@@ -5,7 +5,7 @@ import axios from "axios";
 
 export default function () {
   return axios.create({
-    baseURL: "http://localhost:3005",
+    baseURL: process.env.baseURL,
     timeout: 8000,
     headers: {
       Authorization: "",
