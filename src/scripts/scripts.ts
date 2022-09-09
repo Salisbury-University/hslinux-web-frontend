@@ -4,7 +4,7 @@ import { marked } from "marked";
 
 const req = async () => {
   http()
-    .get("/api/v1/doc/:id")
+    .get("/api/v1/doc/test")
     .then((res) => {
       console.log(marked.parse(res.data.content));
     })

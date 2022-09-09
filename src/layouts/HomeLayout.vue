@@ -44,8 +44,6 @@
 import { ref } from "vue";
 import LeftDrawer from "../components/LeftDrawer.vue";
 
-import testingDynamic from "../views/testingDynamic.vue";
-
 const leftDrawerOpen = ref(false);
 
 function toggleLeftDrawer() {
