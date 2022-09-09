@@ -10,7 +10,6 @@ const routes: Array<RouteRecordRaw> = [
     component: HomeLayout,
     children: [
       {
-        //landing page
         path: "",
         component: PageContents,
       },
