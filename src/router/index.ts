@@ -1,8 +1,11 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 
+import * as dotenv from "dotenv";
 import HomeLayout from "../layouts/HomeLayout.vue";
 import PageContents from "../views/PageContents.vue";
 import Login from "../components/Login.vue";
+
+dotenv.config();
 
 const routes: Array<RouteRecordRaw> = [
   {
