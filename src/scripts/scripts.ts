@@ -6,6 +6,7 @@ const req = async () => {
   http()
     .get("/api/v1/doc/test")
     .then((res) => {
+      console.log(marked.parse(res.data.content));
       return marked.parse(res.data.content);
     })
     .catch((error) => {
