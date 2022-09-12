@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import req from "../scripts/scripts";
+import markdownToHtml from "../scripts/scripts";
 
 import { ref } from "vue";
 
@@ -9,7 +9,7 @@ const markdown = ref("");
 <template>
   <div>
     testingDynamic {{ $route.params.id }}
-    <button @click="markdown = req()">Click Me</button>
+    <button @click="markdown = markdownToHtml()">Show Content</button>
   </div>
 
   <div v-html="markdown"></div>
