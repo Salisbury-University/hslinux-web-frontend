@@ -1,12 +1,13 @@
 <script setup lang="ts">
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-  import Login from "../components/Login.vue";
+import Login from "../components/Login.vue";
 </script>
 
 <template>
-  <div>
-    <Login/>
-    <router-link to="/">Home</router-link>
-  </div>
+  <q-page>
+    <div>
+      <Login />
+    </div>
+  </q-page>
 </template>
