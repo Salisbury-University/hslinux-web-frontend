@@ -3,7 +3,7 @@ import markdownToHtml from "../scripts/scripts";
 
 import { ref } from "vue";
 
-const markdown = ref();
+const markdown = ref("");
 
 async function getMarkDown() {
   let markdown = await markdownToHtml();
