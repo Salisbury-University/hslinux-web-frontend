@@ -3,13 +3,17 @@ import markdownToHtml from "../scripts/scripts";
 
 import { ref } from "vue";
 
-const markdown = ref("");
+const markdown = ref();
+
+async function getMarkDown() {
+  let markdown = await markdownToHtml();
+}
 </script>
 
 <template>
   <div>
     testingDynamic {{ $route.params.id }}
-    <button @click="markdown = markdownToHtml()">Show Content</button>
+    <button @click="getMarkDown()">Show Content</button>
   </div>
 
   <div v-html="markdown"></div>

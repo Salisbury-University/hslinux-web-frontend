@@ -6,7 +6,7 @@ const markdownToHtml = async () => {
   http()
     .get("/api/v1/doc/test")
     .then((res) => {
-      //console.log(marked.parse(res.data.content));
+      console.log(marked.parse(res.data.content));
       return marked.parse(res.data.content);
     })
     .catch((error) => {
@@ -16,5 +16,4 @@ const markdownToHtml = async () => {
 
 export default markdownToHtml;
 
-//https://blog.openreplay.com/how-to-parse-and-render-markdown-in-vuejs
-//https://lukashermann.dev/writing/how-to-use-async-await-with-vuejs-components/
+//https://medium.com/@dobromir_hristov/reacting-to-promises-from-event-listeners-in-vue-js-8959b6d03f52
