@@ -15,10 +15,16 @@
       <q-tabs align="left">
         <q-route-tab to="../views/PageContents" label="Home" />
         <q-route-tab
-          to="/Login"
+          to="../views/Login"
           label="Login"
           v-if="store.persistence.showLogin"
         />
+        <q-route-tab
+          to="../views/Preferences"
+          label="Preferences"
+          v-if="store.persistence.showLogin"
+        />
+        <!-- TODO - trrying to get PReferences page to render when you click it instead of just doing whatever -->
       </q-tabs>
     </q-header>
 
