@@ -2,15 +2,16 @@ import { defineStore } from "pinia";
 import { useLocalStorage } from "@vueuse/core";
 import http from "../http";
 
-/** This is a pinia store that keeps track of all persistent data */
+/** This is a pinia store that keeps track of all data */
 
 export const useAuthStore = defineStore("useAuthStore", {
   state: () => {
     return {
       nonpersistence: {
-        uid: "cxarausa",
-        password: "testing",
+        uid: " ",
+        password: " ",
         baseURL: "http://localhost:3005", // The url that the site will try to send POST and GET requests to
+        loginurl: "/api/v1/auth/login",
       },
       persistence: useLocalStorage("auth", {
         token: "", // Stored token for a logged in user
@@ -28,7 +29,7 @@ export const useAuthStore = defineStore("useAuthStore", {
      */
     login() {
       http()
-        .post("/api/v1/auth/login", {
+        .post(this.nonpersistence.loginurl, {
           uid: this.nonpersistence.uid,
           password: this.nonpersistence.password,
         })
@@ -37,7 +38,7 @@ export const useAuthStore = defineStore("useAuthStore", {
           this.persistence.showLogin = false;
         })
         .catch(function (error) {
-          console.log(error);
+          //console.log(error);
         });
     },
     /** Lougout Function : Clears the user's token, and enables the "login"
