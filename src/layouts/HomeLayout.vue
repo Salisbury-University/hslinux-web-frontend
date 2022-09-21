@@ -13,7 +13,7 @@
       </q-toolbar>
 
       <q-tabs align="left">
-        <q-route-tab to="../views/PageContents" label="Home" />
+        <q-route-tab to="../views/Home" label="Home" />
         <q-route-tab
           to="../views/Login"
           label="Login"
@@ -24,7 +24,7 @@
           label="Preferences"
           v-if="store.persistence.showLogin"
         />
-        <!-- TODO - trrying to get PReferences page to render when you click it instead of just doing whatever -->
+        <!-- TODO - trying to get Peferences page to render when you click it instead of just doing whatever -->
       </q-tabs>
     </q-header>
 
