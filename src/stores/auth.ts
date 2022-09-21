@@ -16,6 +16,8 @@ export const useAuthStore = defineStore("useAuthStore", {
       persistence: useLocalStorage("auth", {
         token: "", // Stored token for a logged in user
         showLogin: true, // Used as reference as to whether the "login" input field should be shown on the login page
+        // Preferences
+        test: false,
       }),
     };
   },
