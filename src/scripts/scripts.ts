@@ -6,14 +6,13 @@ const markdownToHtml = async () => {
   http()
     .get("/api/v1/doc/test")
     .then((res) => {
-      console.log(marked.parse(res.data.content));
+      //console.log(marked.parse(res.data.content));
       return marked.parse(res.data.content);
     })
     .catch((error) => {
       console.error(error);
+      return "Could not load document";
     });
 };
 
 export default markdownToHtml;
-
-//https://medium.com/@dobromir_hristov/reacting-to-promises-from-event-listeners-in-vue-js-8959b6d03f52

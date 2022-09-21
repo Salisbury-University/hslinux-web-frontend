@@ -15,7 +15,6 @@
       <q-tabs align="left">
         <q-route-tab to="../views/PageContents/" label="Home" />
         <q-route-tab to="/Login" label="Login" />
-        <q-route-tab to="../views/testingDynamic/" label="Dynamic" />
       </q-tabs>
     </q-header>
 
