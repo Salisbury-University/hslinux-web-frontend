@@ -28,6 +28,10 @@ export const useAuthStore = defineStore("useAuthStore", {
      *      caught out to the console
      */
     login() {
+      // DEBUG vvv
+      this.persistence.showLogin = false;
+      // DEBUG ^^^
+
       http()
         .post(this.nonpersistence.loginurl, {
           uid: this.nonpersistence.uid,

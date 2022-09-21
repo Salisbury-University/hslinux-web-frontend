@@ -22,9 +22,8 @@
         <q-route-tab
           to="../views/Preferences"
           label="Preferences"
-          v-if="store.persistence.showLogin"
+          v-if="!store.persistence.showLogin"
         />
-        <!-- TODO - trying to get Peferences page to render when you click it instead of just doing whatever -->
       </q-tabs>
     </q-header>
 

@@ -8,10 +8,9 @@ const store = useAuthStore();
 
 <template>
   <!-- Conditionally render the Preferences input field based on the "showLogin" variable in the store -->
-  <q-page v-if="store.persistence.showLogin">
-    <div>
-      <input type="checkbox" id="test" />
-      <label for="test"> Test</label><br />
-    </div>
-  </q-page>
+  <div>
+    <!-- TODO - store the checked fields in the store -->
+    <input type="checkbox" id="test" />
+    <label for="test"> Test</label><br />
+  </div>
 </template>
