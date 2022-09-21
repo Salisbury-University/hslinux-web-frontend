@@ -10,7 +10,11 @@ const store = useAuthStore();
   <!-- Conditionally render the Preferences input field based on the "showLogin" variable in the store -->
   <div>
     <!-- TODO - store the checked fields in the store -->
-    <input type="checkbox" id="test" />
+    <input type="checkbox" v-model="store.test" id="test" />
     <label for="test"> Test</label><br />
+    <div>
+      Test :
+      {{ store.test }}
+    </div>
   </div>
 </template>
