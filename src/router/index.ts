@@ -19,9 +19,12 @@ const routes: Array<RouteRecordRaw> = [
         path: "Login",
         component: Login,
       },
+      {
+        path: "markDown",
+        component: markDown,
+      },
     ],
   },
-  { path: "..views/markDown/:id", component: markDown },
 ];
 
 const router = createRouter({

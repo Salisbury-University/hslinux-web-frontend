@@ -4,6 +4,6 @@
 
 <template>
   <div>
-    <a href="#/markDown/:test">Go To Test</a>
+    <a href="#/markDown">Go To Test</a>
   </div>
 </template>
