@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import { useAuthStore } from "../stores/auth.ts";
 import { useQuasar } from "quasar";
 import { SCOPABLE_TYPES } from "@babel/types";
 
-const $q = useQuasar();
+const $q = useQuasar(); // TODO - This can probably be some kind of global variable instead of an instance in every page
 
 const checked = ref(true);
 
@@ -19,6 +19,8 @@ function sleep() {
 }
 // DEBUG ^^^^^
 
+// TODO - When the site loads, make sure the checkbox and shit are actually synced up with what's stored in the persistant data store
+
 async function updateDarkMode() {
   // TODO - Very much a bandaid fix right now, but making it sleep like 10ms ensures that the v-model value is updated in time for the updateDarkMode function to work
   //  and use the proper updated value. This should probably be changed to async / await somehow to make it better in the future
@@ -28,6 +30,15 @@ async function updateDarkMode() {
 
   $q.dark.set(checked.value);
 }
+
+function updateDarkModePageLoad() {
+  $q.dark.set(store.persistence.darkMode);
+}
+
+onMounted(() => {
+  checked.value = store.persistence.darkMode;
+  // updateDarkModePageLoad();
+});
 </script>
 
 <template>
@@ -49,7 +60,7 @@ async function updateDarkMode() {
     <label for="darkMode"> Test</label><br />
     <div>
       Test :
-      {{ checked }}
+      {{ store.persistence.darkMode }}
     </div>
   </div>
 </template>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import { useAuthStore } from "../stores/auth.ts";
 import { useQuasar } from "quasar";
 
@@ -20,9 +20,9 @@ function updateDarkMode() {
   $q.dark.set(store.persistence.darkMode);
 }
 
-function onMounted() {
+onMounted(() => {
   updateDarkMode();
-}
+});
 </script>
 
 <template>

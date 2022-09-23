@@ -21,10 +21,6 @@ function updateDarkMode() {
 onMounted(() => {
   updateDarkMode();
 });
-
-// function onMounted(){
-//   updateDarkMode();
-// }
 </script>
 
 <template>
