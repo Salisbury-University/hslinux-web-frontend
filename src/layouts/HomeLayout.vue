@@ -1,3 +1,32 @@
+<script setup lang="ts">
+import { ref, onMounted } from "vue";
+import LeftDrawer from "../components/LeftDrawer.vue";
+import PageContents from "../views/PageContents.vue";
+import { useAuthStore } from "../stores/auth.ts";
+import { useQuasar } from "quasar";
+
+const $q = useQuasar();
+
+const leftDrawerOpen = ref(false);
+const store = useAuthStore();
+
+function toggleLeftDrawer() {
+  leftDrawerOpen.value = !leftDrawerOpen.value;
+}
+
+function updateDarkMode() {
+  $q.dark.set(store.persistence.darkMode);
+}
+
+onMounted(() => {
+  updateDarkMode();
+});
+
+// function onMounted(){
+//   updateDarkMode();
+// }
+</script>
+
 <template>
   <q-layout view="hHh lpR fFf">
     <q-header elevated class="bg-primary text-white" height-hint="98">
@@ -47,17 +76,3 @@
     </q-footer>
   </q-layout>
 </template>
-
-<script setup lang="ts">
-import { ref } from "vue";
-import LeftDrawer from "../components/LeftDrawer.vue";
-import PageContents from "../views/PageContents.vue";
-import { useAuthStore } from "../stores/auth.ts";
-
-const leftDrawerOpen = ref(false);
-const store = useAuthStore();
-
-function toggleLeftDrawer() {
-  leftDrawerOpen.value = !leftDrawerOpen.value;
-}
-</script>

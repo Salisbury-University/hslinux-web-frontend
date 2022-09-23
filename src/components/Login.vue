@@ -19,6 +19,10 @@ function logout() {
 function updateDarkMode() {
   $q.dark.set(store.persistence.darkMode);
 }
+
+function onMounted() {
+  updateDarkMode();
+}
 </script>
 
 <template>
