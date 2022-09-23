@@ -3,7 +3,5 @@
 </script>
 
 <template>
-  <div>
-    <a href="#/markDown">Go To Test</a>
-  </div>
+  <div></div>
 </template>
