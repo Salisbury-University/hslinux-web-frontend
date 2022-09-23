@@ -57,7 +57,7 @@ onMounted(() => {
     So i need some way to make that run after we update the value, but idk if we can update the value in the function because I don't know how to get the value in
     the function -->
 
-    <label for="darkMode"> Test</label><br />
+    <label for="darkMode"> Dark Mode</label><br />
     <div>
       Test :
       {{ store.persistence.darkMode }}
