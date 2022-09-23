@@ -17,7 +17,7 @@ export const useAuthStore = defineStore("useAuthStore", {
         token: "", // Stored token for a logged in user
         showLogin: true, // Controls whether pages relating to logging in/out or being logged in should be shown
         // Preferences
-        test: false,
+        darkMode: false,
       }),
     };
   },
@@ -52,6 +52,9 @@ export const useAuthStore = defineStore("useAuthStore", {
     logout() {
       this.persistence.token = "";
       this.persistence.showLogin = true;
+    },
+    setDarkMode() {
+      // TODO - Make dark mode actually make it D A R K
     },
   },
 });

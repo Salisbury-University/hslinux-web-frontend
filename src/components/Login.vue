@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { useAuthStore } from "../stores/auth.ts";
+import { useQuasar } from "quasar";
+
+const $q = useQuasar();
 
 /** Defines a pinia store used for data and actions */
 const store = useAuthStore();
@@ -11,6 +14,10 @@ function submit() {
 
 function logout() {
   store.logout();
+}
+
+function updateDarkMode() {
+  $q.dark.set(store.persistence.darkMode);
 }
 </script>
 
@@ -35,6 +42,7 @@ function logout() {
     <div>
       <!--- Uses the "submit" function defined in the pinia store -->
       <button @click="submit">Submit</button>
+      <button @click="updateDarkMode">asdgsdfggsd</button>
     </div>
   </q-page>
 </template>
