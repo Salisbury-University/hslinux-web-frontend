@@ -5,12 +5,9 @@ import markDownToHtml from "../scripts/scripts";
 export default defineComponent({
   el: "#Contents",
   data() {
-    markDown: "HomePage";
-  },
-  methods: {
-    /*async function changeContents() {
-       markDown= await markDownToHtml(); 
-      }*/
+    return {
+      markDown: "<p>Home Page</p>",
+    };
   },
 });
 </script>
