@@ -35,17 +35,22 @@ export const usePageStore = defineStore("page", {
 
     setPage(): void {
       //two http calls first is to get amount of documents second is to get individual content
+      http()
+        .get("/api/v1/doc")
+        .then((res) => {
+          const info = res.data.doc;
 
-      //array to hold page content
-      for (let i = 0; i < info.length; i++) {
-        http()
-          .get("/api/v1/doc/".concat(info[i]))
-          .then((response) => {
-            const metadata = response.data.metadata;
+          //array for pages
+          for (let i = 0; i < info.length; i++) {
+            http()
+              .get("/api/v1/doc/".concat(info[i]))
+              .then((response) => {
+                const metadata = response.data.metadata;
 
-            this.content = metadata.content;
-          });
-      }
+                this.content = metadata.content;
+              });
+          }
+        });
     },
   },
 });
