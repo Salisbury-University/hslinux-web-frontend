@@ -38,12 +38,12 @@ export const usePageStore = defineStore("page", {
       http()
         .get("/api/v1/docs")
         .then((res) => {
-          const info = res.data.docs;
+          const docData = res.data.docs;
 
           //array for pages
-          for (let i = 0; i < info.length; i++) {
+          for (let i = 0; i < docData.length; i++) {
             http()
-              .get("/api/v1/doc/".concat(info[i]))
+              .get("/api/v1/doc/".concat(docData[i]))
               .then((response) => {
                 const metadata = response.data;
 
