@@ -1,5 +1,5 @@
 <script setup lang="ts">
-//https://vuejs.org/guide/essentials/template-syntax.html
+import { usePageStore } from "../stores/markdown";
 </script>
 
 <template>
