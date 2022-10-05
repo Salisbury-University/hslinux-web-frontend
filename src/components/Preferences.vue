@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
 import { useAuthStore } from "../stores/auth.ts";
 import { useQuasar } from "quasar";
 import { SCOPABLE_TYPES } from "@babel/types";
@@ -18,11 +17,6 @@ async function updateDarkMode() {
 
   $q.dark.set(store.persistence.darkMode);
 }
-
-onMounted(() => {
-  updateDarkMode();
-  console.log("Preferences Mounted");
-});
 </script>
 
 <template>

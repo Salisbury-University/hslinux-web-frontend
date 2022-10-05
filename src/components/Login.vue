@@ -1,26 +1,10 @@
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
 import { useAuthStore } from "../stores/auth.ts";
-import { useQuasar } from "quasar";
 
 const store = useAuthStore();
-const $q = useQuasar();
-
-function updateDarkMode() {
-  $q.dark.set(store.persistence.darkMode);
-}
-
-onMounted(() => {
-  updateDarkMode();
-  console.log("Login Mounted");
-});
 
 function submit() {
   store.login();
-}
-
-function logout() {
-  store.logout();
 }
 </script>
 
