@@ -46,7 +46,6 @@ onMounted(() => {
     <div>
       <!--- Uses the "submit" function defined in the pinia store -->
       <button @click="submit">Submit</button>
-      <button @click="updateDarkMode">asdgsdfggsd</button>
     </div>
   </q-page>
 </template>

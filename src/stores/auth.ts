@@ -31,6 +31,7 @@ export const useAuthStore = defineStore("useAuthStore", {
      */
     login() {
       // DEBUG vvv
+      // This makes it so we don't need to talk with the backend to get a "real" login
       this.persistence.showLogin = false;
       // DEBUG ^^^
 
@@ -47,7 +48,7 @@ export const useAuthStore = defineStore("useAuthStore", {
           //console.log(error);
         });
     },
-    /** Lougout Function : Clears the user's token, and enables the "login"
+    /** Logout Function : Clears the user's token, and enables the "login"
      *    input field variable */
     logout() {
       this.persistence.token = "";
