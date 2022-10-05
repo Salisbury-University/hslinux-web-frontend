@@ -1,9 +1,5 @@
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <template>
-    <div>
-        Left Drawer Contents
-    </div>
+  <div>Left Drawer Contents</div>
 </template>

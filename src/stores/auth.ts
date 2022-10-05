@@ -1,5 +1,6 @@
 import { defineStore } from "pinia";
 import { useLocalStorage } from "@vueuse/core";
+import { useQuasar } from "quasar";
 import http from "../http";
 
 /** This is a pinia store that keeps track of all data */
@@ -18,6 +19,7 @@ export const useAuthStore = defineStore("useAuthStore", {
         showLogin: true, // Controls whether pages relating to logging in/out or being logged in should be shown
         // Preferences
         darkMode: false,
+        $q: useQuasar(),
       }),
     };
   },
@@ -55,6 +57,7 @@ export const useAuthStore = defineStore("useAuthStore", {
       this.persistence.showLogin = true;
     },
     setDarkMode() {
+      console.log("Pinia store");
       // TODO - Make dark mode actually make it D A R K
     },
   },

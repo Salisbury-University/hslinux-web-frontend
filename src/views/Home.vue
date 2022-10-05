@@ -1,19 +1,11 @@
 <script setup lang="ts">
-import { useAuthStore } from "../stores/auth.ts";
-
-const store = useAuthStore();
-
-function logout() {
-  store.logout();
-}
+import Home from "../components/Home.vue";
 </script>
 
 <template>
   <q-page>
     <div>
-      <button @click="logout" v-if="!store.persistence.showLogin">
-        Logout
-      </button>
+      <Home />
     </div>
   </q-page>
 </template>

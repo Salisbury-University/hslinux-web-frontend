@@ -3,10 +3,17 @@ import { ref, onMounted } from "vue";
 import { useAuthStore } from "../stores/auth.ts";
 import { useQuasar } from "quasar";
 
+const store = useAuthStore();
 const $q = useQuasar();
 
-/** Defines a pinia store used for data and actions */
-const store = useAuthStore();
+function updateDarkMode() {
+  $q.dark.set(store.persistence.darkMode);
+}
+
+onMounted(() => {
+  updateDarkMode();
+  console.log("Login Mounted");
+});
 
 function submit() {
   store.login();
@@ -15,14 +22,6 @@ function submit() {
 function logout() {
   store.logout();
 }
-
-function updateDarkMode() {
-  $q.dark.set(store.persistence.darkMode);
-}
-
-onMounted(() => {
-  updateDarkMode();
-});
 </script>
 
 <template>

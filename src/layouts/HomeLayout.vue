@@ -20,6 +20,7 @@ function updateDarkMode() {
 
 onMounted(() => {
   updateDarkMode();
+  console.log("HomeLayout mounted");
 });
 </script>
 
