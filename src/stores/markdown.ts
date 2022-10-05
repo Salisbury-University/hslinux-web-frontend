@@ -6,8 +6,13 @@ import { info } from "console";
 export const usePageStore = defineStore("page", {
   state: () => {
     return {
-      title: [],
+      name: [],
       content: [],
+      persistence: useStorage("page", {
+        header: {
+          Authorization: "",
+        },
+      }),
     };
   },
   getters: {
@@ -28,7 +33,7 @@ export const usePageStore = defineStore("page", {
      * @returns {string} title state
      */
     getTitle(state: any): string {
-      return state.title;
+      return state.name;
     },
   },
 
@@ -46,11 +51,11 @@ export const usePageStore = defineStore("page", {
     /**
      * set title
      *
-     * @param {string} newTitle
+     * @param {string} newName
      */
 
-    setTitle(newTitle: string): void {
-      this.title = newTitle;
+    setTitle(newName: string): void {
+      this.name = newName;
     },
 
     setPage(): void {
@@ -66,11 +71,10 @@ export const usePageStore = defineStore("page", {
               .get("/api/v1/doc/".concat(docData[i]))
               .then((response) => {
                 const markContent = response.data;
-                const metadata = response.data.metadata;
+                const metadata = markContent.metadata;
 
                 //metadata
-                this.title[i] = metadata.title;
-
+                this.name[i] = metadata.title;
                 this.content[i] = markContent.content;
               });
           }

@@ -5,11 +5,15 @@ import { ref } from "vue";
 const usePage = usePageStore();
 usePage.setPage();
 
-const pageSize = usePage.title.length; //amount of documents
+const pageSize = usePage.name.length; //amount of documents
 </script>
 
 <template>
-  <div v-for="i in pageSize" :key="i">
-    {{ usePage.title[i] }}
+  <div class="list">
+    <li v-for="index in pageSize" :key="index">
+      <button @click="loadPage(index - 1)">
+        {{ usePage.name[index - 1] }}
+      </button>
+    </li>
   </div>
 </template>

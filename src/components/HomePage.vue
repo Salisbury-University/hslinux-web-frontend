@@ -1,3 +1,13 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref } from "vue";
+import { usePageStore } from "../stores/markdown";
 
-<template></template>
+const usePage = usePageStore();
+usePage.setPage();
+
+const pageSize = usePage.name.length;
+</script>
+
+<template>
+  <div v-html="usePage.content[i]"></div>
+</template>
