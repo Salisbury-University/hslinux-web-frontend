@@ -13,8 +13,18 @@
       </q-toolbar>
 
       <q-tabs align="left">
-        <q-route-tab to="../views/PageContents/" label="Home" />
-        <q-route-tab to="/Login" label="Login" />
+        <q-route-tab to="../views/PageContents" label="Home" />
+        <q-route-tab
+          to="../views/Login"
+          label="Login"
+          v-if="store.persistence.showLogin"
+        />
+        <q-route-tab
+          to="../views/Preferences"
+          label="Preferences"
+          v-if="store.persistence.showLogin"
+        />
+        <!-- TODO - trrying to get PReferences page to render when you click it instead of just doing whatever -->
       </q-tabs>
     </q-header>
 
@@ -43,8 +53,10 @@
 import { ref } from "vue";
 import LeftDrawer from "../components/LeftDrawer.vue";
 import PageContents from "../views/PageContents.vue";
+import { useAuthStore } from "../stores/auth.ts";
 
 const leftDrawerOpen = ref(false);
+const store = useAuthStore();
 
 function toggleLeftDrawer() {
   leftDrawerOpen.value = !leftDrawerOpen.value;

@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import Login from "../components/Login.vue";
+import Preferences from "../components/Preferences.vue";
 </script>
 
 <template>
   <q-page>
     <div>
-      <Login />
+      <Preferences />
     </div>
   </q-page>
 </template>
