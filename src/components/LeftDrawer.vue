@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import { usePageStore } from "../stores/markdown";
-import defineComponent from "../scripts/pageIndex";
-import { ref } from "vue";
+import Vue from "vue";
+import { onMounted } from "vue";
 
 const usePage = usePageStore();
 usePage.setPage();
+const pageSize = usePage.name.length; //amount of documents
 
-const pageSize = usePage.content.length; //amount of documents
+const Component = {};
 </script>
 
 <template>
