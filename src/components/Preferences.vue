@@ -16,8 +16,6 @@ function sleep() {
 // TODO - When logging out, clear the persistent storage so that we go back to light mode
 
 async function buffer() {
-  // Temporary for now maybe? We have to have a tiny buffer window between the v-model update and refereshing the page, or else it'll refresh using
-  // the old value
   await sleep();
 }
 
