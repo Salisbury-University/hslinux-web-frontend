@@ -15,7 +15,9 @@ export const useAuthStore = defineStore("useAuthStore", {
       },
       persistence: useLocalStorage("auth", {
         token: "", // Stored token for a logged in user
-        showLogin: true, // Used as reference as to whether the "login" input field should be shown on the login page
+        showLogin: true, // Controls whether pages relating to logging in/out or being logged in should be shown
+        /* Preferences */
+        darkMode: false,
       }),
     };
   },
@@ -28,6 +30,11 @@ export const useAuthStore = defineStore("useAuthStore", {
      *      caught out to the console
      */
     login() {
+      // DEBUG vvv
+      // This makes it so we don't need to talk with the backend to get a "real" login
+      this.persistence.showLogin = false;
+      // DEBUG ^^^
+
       http()
         .post(this.nonpersistence.loginurl, {
           uid: this.nonpersistence.uid,
@@ -41,11 +48,14 @@ export const useAuthStore = defineStore("useAuthStore", {
           //console.log(error);
         });
     },
-    /** Lougout Function : Clears the user's token, and enables the "login"
+    /** Logout Function : Clears the user's token, and enables the "login"
      *    input field variable */
     logout() {
       this.persistence.token = "";
       this.persistence.showLogin = true;
+    },
+    setDarkMode() {
+      console.log("Pinia store");
     },
   },
 });

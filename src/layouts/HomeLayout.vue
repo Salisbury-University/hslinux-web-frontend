@@ -1,3 +1,29 @@
+<script setup lang="ts">
+import { ref, onMounted } from "vue";
+import LeftDrawer from "../components/LeftDrawer.vue";
+import PageContents from "../views/PageContents.vue";
+import { useAuthStore } from "../stores/auth.ts";
+import { useQuasar } from "quasar";
+
+const $q = useQuasar();
+
+const leftDrawerOpen = ref(false);
+const store = useAuthStore();
+
+function toggleLeftDrawer() {
+  leftDrawerOpen.value = !leftDrawerOpen.value;
+}
+
+function updateDarkMode() {
+  $q.dark.set(store.persistence.darkMode);
+}
+
+onMounted(() => {
+  updateDarkMode();
+  console.log("HomeLayout mounted");
+});
+</script>
+
 <template>
   <q-layout view="hHh lpR fFf">
     <q-header elevated class="bg-primary text-white" height-hint="98">
@@ -13,7 +39,7 @@
       </q-toolbar>
 
       <q-tabs align="left">
-        <q-route-tab to="../views/PageContents" label="Home" />
+        <q-route-tab to="../views/Home" label="Home" />
         <q-route-tab
           to="../views/Login"
           label="Login"
@@ -22,9 +48,8 @@
         <q-route-tab
           to="../views/Preferences"
           label="Preferences"
-          v-if="store.persistence.showLogin"
+          v-if="!store.persistence.showLogin"
         />
-        <!-- TODO - trrying to get PReferences page to render when you click it instead of just doing whatever -->
       </q-tabs>
     </q-header>
 
@@ -48,17 +73,3 @@
     </q-footer>
   </q-layout>
 </template>
-
-<script setup lang="ts">
-import { ref } from "vue";
-import LeftDrawer from "../components/LeftDrawer.vue";
-import PageContents from "../views/PageContents.vue";
-import { useAuthStore } from "../stores/auth.ts";
-
-const leftDrawerOpen = ref(false);
-const store = useAuthStore();
-
-function toggleLeftDrawer() {
-  leftDrawerOpen.value = !leftDrawerOpen.value;
-}
-</script>

@@ -1,16 +1,10 @@
 <script setup lang="ts">
-import { ref } from "vue";
 import { useAuthStore } from "../stores/auth.ts";
 
-/** Defines a pinia store used for data and actions */
 const store = useAuthStore();
 
 function submit() {
   store.login();
-}
-
-function logout() {
-  store.logout();
 }
 </script>
 

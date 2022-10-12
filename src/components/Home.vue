@@ -9,11 +9,5 @@ function logout() {
 </script>
 
 <template>
-  <q-page>
-    <div>
-      <button @click="logout" v-if="!store.persistence.showLogin">
-        Logout
-      </button>
-    </div>
-  </q-page>
+  <button @click="logout" v-if="!store.persistence.showLogin">Logout</button>
 </template>
