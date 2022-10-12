@@ -12,6 +12,7 @@
     "@quasar/extras": "^1.12.5",
     "@vueuse/core": "^8.4.2",
     "axios": "^0.27.2",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.2",
     "markdown": "^0.5.0",
     "pinia": "^2.0.11",
