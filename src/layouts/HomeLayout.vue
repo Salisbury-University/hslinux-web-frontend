@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import LeftDrawer from "../components/LeftDrawer.vue";
-import PageContents from "../views/PageContents.vue";
 import { useAuthStore } from "../stores/auth.ts";
 import { useQuasar } from "quasar";
 
