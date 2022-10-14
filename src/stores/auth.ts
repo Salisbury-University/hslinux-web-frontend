@@ -18,6 +18,9 @@ export const useAuthStore = defineStore("useAuthStore", {
         showLogin: true, // Controls whether pages relating to logging in/out or being logged in should be shown
         /* Preferences */
         darkMode: false,
+        currentText: 0x000000,
+        lightText: 0x000000,
+        darkText: 0xffffff,
       }),
     };
   },
