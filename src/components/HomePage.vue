@@ -1,15 +1,13 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { usePageStore } from "../stores/markdown";
-import defineComponent from "../scripts/pageIndex";
+import { useShowContent } from "../stores/showPage";
+import { marked } from "marked";
 
 const usePage = usePageStore();
 usePage.setPage();
-
-const pageSize = usePage.content.length;
-var i = 0;
 </script>
 
 <template>
-  <div v-html="usePage.content[i]"></div>
+  <div v-html="usePage.content[0]"></div>
 </template>

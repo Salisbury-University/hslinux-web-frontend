@@ -1,6 +1,7 @@
 import { defineStore } from "pinia";
 import { useStorage } from "@vueuse/core";
 import http from "../../http";
+import { marked } from "marked";
 import { info } from "console";
 
 export const usePageStore = defineStore("page", {
@@ -75,7 +76,7 @@ export const usePageStore = defineStore("page", {
 
                 //metadata
                 this.name[i] = metadata.title;
-                this.content[i] = markContent.content;
+                this.content[i] = marked.parse(markContent.content);
               });
           }
         });

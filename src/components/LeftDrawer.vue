@@ -5,17 +5,9 @@ import { onMounted } from "vue";
 
 const usePage = usePageStore();
 usePage.setPage();
-let pageSize; //amount of documents
-let refresh = 1;
+let pageSize = usePage.name.length; //amount of documents
 
 onMounted(() => {
-  if (refresh == 0) {
-    pageSize = usePage.name.length;
-    refresh = 1;
-  } else {
-    pageSize = usePage.content.length;
-    refresh = 0;
-  }
   console.log("left-drawer mounted");
 });
 </script>
@@ -23,7 +15,7 @@ onMounted(() => {
 <template>
   <div class="list">
     <li v-for="index in pageSize" :key="index">
-      <button @click="i">
+      <button @click="usePage.setCurrent(index - 1)">
         {{ usePage.name[index - 1] }}
       </button>
     </li>
