@@ -21,7 +21,6 @@ async function buffer() {
 
 onUpdated(() => {
   buffer();
-  console.log("Test");
 
   $q.dark.set(store.persistence.darkMode);
 });
@@ -36,6 +35,7 @@ onUpdated(() => {
       id="darkMode"
       value="value"
     />
-    <label for="darkMode"> Dark Mode</label><br />
+    <label for="darkMode" color="green"> Dark Mode</label><br />
+    <!-- <p :text-color>asfasdfasdfas</p> -->
   </div>
 </template>
