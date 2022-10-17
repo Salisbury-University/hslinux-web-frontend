@@ -9,6 +9,7 @@ export const usePageStore = defineStore("page", {
     return {
       name: [],
       content: [],
+      counter: Number,
       persistence: useStorage("page", {
         header: {
           Authorization: "",
@@ -36,6 +37,9 @@ export const usePageStore = defineStore("page", {
     getTitle(state: any): string {
       return state.name;
     },
+    getCounter(state: any): Number {
+      return state.counter;
+    },
   },
 
   actions: {
@@ -57,6 +61,10 @@ export const usePageStore = defineStore("page", {
 
     setTitle(newName: string): void {
       this.name = newName;
+    },
+
+    setCounter(newCounter: Number): void {
+      this.counter = newCounter;
     },
 
     setPage(): void {

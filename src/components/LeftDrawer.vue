@@ -15,7 +15,7 @@ onMounted(() => {
 <template>
   <div class="list">
     <li v-for="index in pageSize" :key="index">
-      <button @click="usePage.setCurrent(index - 1)">
+      <button @click="i">
         {{ usePage.name[index - 1] }}
       </button>
     </li>
