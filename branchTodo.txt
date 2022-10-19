@@ -1,0 +1,37 @@
+I'm trying to make the user Dark Mode preferences save and persist throughout logins and for different users.
+
+To do this, I'm going to have to use the backend database that they've created
+    When a user updates their dark mode pref, it'll update it in the database and save it, and when they log in to the page
+    it'll load their preferences from the database and load it
+
+
+
+*Prisma CRUD
+
+// TODO - Figure out how to use the two dummy logins to log in without having to use the API
+
+then after that
+
+// TODO - Figure out how to read and write from the database
+
+then we can
+
+// TODO - Read and write the user's dark mode preferences in real time, and when they log in or out to be able to
+    A. When the user logs out of the page or is not logged in to begin with, the page will revert to LIGHT MODE.
+    B. When the user logs in, it will query the database to get their Dark Mode Preference, and update the page accordingly.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+We have the usernames and passwords for the two dummy users
+
+User 1
+    Alice
+    somepass
+
+User 2
+    Bob
+    passsome
+
+So we just need to make an API call to this prisma database instead of the LDAP API
+
+How do???

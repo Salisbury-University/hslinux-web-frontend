@@ -8,8 +8,8 @@ export const useAuthStore = defineStore("useAuthStore", {
   state: () => {
     return {
       nonpersistence: {
-        uid: " ",
-        password: " ",
+        uid: "Alice",
+        password: "somepass",
         baseURL: "http://localhost:3005", // The url that the site will try to send POST and GET requests to
         loginurl: "/api/v1/auth/login",
       },
@@ -33,11 +33,6 @@ export const useAuthStore = defineStore("useAuthStore", {
      *      caught out to the console
      */
     login() {
-      // DEBUG vvv
-      // This makes it so we don't need to talk with the backend to get a "real" login
-      this.persistence.showLogin = false;
-      // DEBUG ^^^
-
       http()
         .post(this.nonpersistence.loginurl, {
           uid: this.nonpersistence.uid,
@@ -48,7 +43,7 @@ export const useAuthStore = defineStore("useAuthStore", {
           this.persistence.showLogin = false;
         })
         .catch(function (error) {
-          //console.log(error);
+          console.log(error);
         });
     },
     /** Logout Function : Clears the user's token, and enables the "login"

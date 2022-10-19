@@ -3,6 +3,8 @@ import { useAuthStore } from "../stores/auth.ts";
 
 const store = useAuthStore();
 
+// TODO - Properly V-Model the auth ts stuff, when it's hardcoded it works fine
+
 function submit() {
   store.login();
 }
@@ -29,6 +31,8 @@ function submit() {
     <div>
       <!--- Uses the "submit" function defined in the pinia store -->
       <button @click="submit">Submit</button>
+      <p>{{ store.uid }}</p>
+      <p>{{ store.password }}</p>
     </div>
   </q-page>
 </template>
