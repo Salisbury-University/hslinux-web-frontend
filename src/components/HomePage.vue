@@ -1,14 +1,30 @@
-<script setup lang="ts">
-import { ref } from "vue";
+<script setup lang="js">
+import { compileFunction } from "vm";
+import { defineComponent, ref } from "vue";
 import { usePageStore } from "../stores/markdown";
 //localStorage
-import { marked } from "marked";
 
 const usePage = usePageStore();
 usePage.setPage();
-usePage.setCounter(0);
+
+let i = localStorage.index = 2;
+
+export default {
+  components: {
+    Page
+  }
+  methods: {
+    forceUpdate() {
+      this.$forceUpdate();
+    }
+  },
+  template: `
+    <div v-html="usePage.content[i]"></div>
+    <button @click="forceUpdate()"></button>
+    `
+}
 </script>
 
 <template>
-  <div v-html="usePage.content[0]"></div>
+  <Page />
 </template>
