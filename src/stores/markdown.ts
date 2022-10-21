@@ -2,7 +2,6 @@ import { defineStore } from "pinia";
 import { useStorage } from "@vueuse/core";
 import http from "../../http";
 import { marked } from "marked";
-import { info } from "console";
 
 export const usePageStore = defineStore("page", {
   state: () => {

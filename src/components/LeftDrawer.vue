@@ -19,7 +19,5 @@ onMounted(() => {
         {{ usePage.name[index - 1] }}
       </button>
     </li>
-
-    <button @click="localStorage.index = 4">Click me</button>
   </div>
 </template>
