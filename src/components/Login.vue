@@ -17,22 +17,24 @@ function submit() {
     <div>
       <!--- Data directly v-modeled into the "uid" value of the store, so updates in real time -->
       <p>Username</p>
-      <input v-model="store.uid" placeHolder="Type here" />
+      <input v-model="store.nonpersistence.uid" placeHolder="Type here" />
     </div>
 
     <!--- User Password -->
     <div>
       <!--- Data directly v-modeled into the "password" value of the store, so updates in real time -->
       <p>Password</p>
-      <input type="password" v-model="store.password" placeHolder="Type here" />
+      <input
+        type="password"
+        v-model="store.nonpersistence.password"
+        placeHolder="Type here"
+      />
     </div>
 
     <!--- Password submit -->
     <div>
       <!--- Uses the "submit" function defined in the pinia store -->
       <button @click="submit">Submit</button>
-      <p>{{ store.uid }}</p>
-      <p>{{ store.password }}</p>
     </div>
   </q-page>
 </template>

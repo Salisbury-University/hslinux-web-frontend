@@ -8,7 +8,7 @@ To do this, I'm going to have to use the backend database that they've created
 
 *Prisma CRUD
 
-// TODO - Figure out how to use the two dummy logins to log in without having to use the API
+[DONE] // TODO - Figure out how to use the two dummy logins to log in without having to use the API
 
 then after that
 
