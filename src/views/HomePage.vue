@@ -5,12 +5,15 @@ import { ref } from "vue";
 
 const componentKey = ref(0);
 
-localStorage.index = 0;
+var i = (localStorage.index = 0);
+
+window.addEventListener("i", () => {
+  console.log("index changed", Number(localStorage.index));
+});
 
 const forceRender = (index: Number) => {
   localStorage.index = index;
   componentKey.value += 1;
-  console.log("rerender value", componentKey.value);
 };
 </script>
 
