@@ -15,6 +15,10 @@ function sleep() {
 
 // TODO - When logging out, clear the persistent storage so that we go back to light mode
 
+function test() {
+  store.setDarkMode();
+}
+
 async function buffer() {
   await sleep();
 }
@@ -34,6 +38,7 @@ onUpdated(() => {
       v-model="store.persistence.darkMode"
       id="darkMode"
       value="value"
+      @click="test"
     />
     <label for="darkMode" color="green"> Dark Mode</label><br />
     <!-- <p :text-color>asfasdfasdfas</p> -->

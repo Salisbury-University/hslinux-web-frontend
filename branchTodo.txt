@@ -6,13 +6,17 @@ To do this, I'm going to have to use the backend database that they've created
 
 
 
-*Prisma CRUD
+
 
 [DONE] // TODO - Figure out how to use the two dummy logins to log in without having to use the API
 
 then after that
 
 // TODO - Figure out how to read and write from the database
+    * Try to send a post request to the backend to read data?? We should be trying to get the backend to do it
+    * To do this, we need to send a post or get request to the backend with the logged in user's token
+    * POST to update a user's preferences, send this when we tick or untick the dark mode
+    * GET will retrieve a user's preferences, send this when we load the page to RETRIEVE their dark mode spec
 
 then we can
 
@@ -35,3 +39,7 @@ User 2
 So we just need to make an API call to this prisma database instead of the LDAP API
 
 How do???
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+

@@ -12,6 +12,7 @@ export const useAuthStore = defineStore("useAuthStore", {
         password: "",
         baseURL: "http://localhost:3005", // The url that the site will try to send POST and GET requests to
         loginurl: "/api/v1/auth/login",
+        preferenceRoute: "/api/v1/preferences",
       },
       persistence: useLocalStorage("auth", {
         token: "", // Stored token for a logged in user
@@ -53,7 +54,21 @@ export const useAuthStore = defineStore("useAuthStore", {
       this.persistence.showLogin = true;
     },
     setDarkMode() {
-      console.log("Pinia store");
+      // TODO - Send a POST request to the backend preference route, with the value that we want to set
+      // console.log("Pinia store");
+
+      http()
+        .post(this.nonpersistence.preferenceRoute, {})
+        .then((response) => {})
+        .catch(function (error) {});
+    },
+    getDarkMode() {
+      // TODO - Send a GET request to the backend preference route to RETRIEVE the user's dark mode pref
+
+      http()
+        .post(this.nonpersistence.preferenceRoute, {})
+        .then((response) => {})
+        .catch(function (error) {});
     },
   },
 });
