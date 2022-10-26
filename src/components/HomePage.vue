@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { ref } from "vue";
-import { onMounted } from "vue";
 import { usePageStore } from "../stores/markdown";
 //localStorage
 

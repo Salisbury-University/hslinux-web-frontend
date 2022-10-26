@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, onUpdated, getCurrentInstance } from "vue";
-import { useAuthStore } from "../stores/auth.ts";
+import { useAuthStore } from "../stores/auth";
 import { useQuasar } from "quasar";
 import { SCOPABLE_TYPES } from "@babel/types";
 

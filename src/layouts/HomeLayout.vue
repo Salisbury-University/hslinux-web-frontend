@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import LeftDrawer from "../components/LeftDrawer.vue";
-import { useAuthStore } from "../stores/auth.ts";
+import { useAuthStore } from "../stores/auth";
 import { useQuasar } from "quasar";
 
 const $q = useQuasar();
@@ -27,7 +27,7 @@ onMounted(() => {
   <q-layout view="hHh lpR fFf">
     <q-header elevated class="bg-primary text-white" height-hint="98">
       <q-toolbar>
-        <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
+        <q-btn dense flat round icon="menu" @click="toggleLeftDrawer()" />
 
         <q-toolbar-title>
           <q-avatar>
@@ -40,7 +40,7 @@ onMounted(() => {
       <q-tabs align="left">
         <q-route-tab to="/" label="Home" />
         <q-route-tab
-          to="/Login"
+          to="../views/Login"
           label="Login"
           v-if="store.persistence.showLogin"
         />
@@ -72,15 +72,3 @@ onMounted(() => {
     </q-footer>
   </q-layout>
 </template>
-
-
-<script setup lang="ts">
-import { ref } from "vue";
-import LeftDrawer from "../components/LeftDrawer.vue";
-
-const leftDrawerOpen = ref(false);
-
-function toggleLeftDrawer() {
-  leftDrawerOpen.value = !leftDrawerOpen.value;
-}
-</script>
