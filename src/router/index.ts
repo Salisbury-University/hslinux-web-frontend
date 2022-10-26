@@ -1,10 +1,9 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 
 import HomeLayout from "../layouts/HomeLayout.vue";
-import Home from "../views/Home.vue";
+import HomePage from "../views/HomePage.vue";
 import Login from "../views/Login.vue";
 import Preferences from "../views/Preferences.vue";
-import testingDynamic from "../views/testingDynamic.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -13,11 +12,7 @@ const routes: Array<RouteRecordRaw> = [
     children: [
       {
         path: "",
-        component: Home,
-      },
-      {
-        path: "Home",
-        component: Home,
+        component: HomePage,
       },
       {
         path: "Login",
@@ -29,8 +24,6 @@ const routes: Array<RouteRecordRaw> = [
       },
     ],
   },
-
-  { path: "/testingDynamic/:id", component: testingDynamic },
 ];
 
 const router = createRouter({

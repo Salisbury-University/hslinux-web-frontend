@@ -38,9 +38,9 @@ onMounted(() => {
       </q-toolbar>
 
       <q-tabs align="left">
-        <q-route-tab to="../views/Home" label="Home" />
+        <q-route-tab to="/" label="Home" />
         <q-route-tab
-          to="../views/Login"
+          to="/Login"
           label="Login"
           v-if="store.persistence.showLogin"
         />
@@ -72,3 +72,15 @@ onMounted(() => {
     </q-footer>
   </q-layout>
 </template>
+
+
+<script setup lang="ts">
+import { ref } from "vue";
+import LeftDrawer from "../components/LeftDrawer.vue";
+
+const leftDrawerOpen = ref(false);
+
+function toggleLeftDrawer() {
+  leftDrawerOpen.value = !leftDrawerOpen.value;
+}
+</script>
