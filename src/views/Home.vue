@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import Login from "../components/Login.vue";
+import Home from "../components/Home.vue";
 </script>
 
 <template>
   <q-page>
     <div>
-      <Login />
+      <Home />
     </div>
   </q-page>
 </template>

@@ -1,3 +1,28 @@
+<script setup lang="ts">
+import { ref, onMounted } from "vue";
+import LeftDrawer from "../components/LeftDrawer.vue";
+import { useAuthStore } from "../stores/auth.ts";
+import { useQuasar } from "quasar";
+
+const $q = useQuasar();
+
+const leftDrawerOpen = ref(false);
+const store = useAuthStore();
+
+function toggleLeftDrawer() {
+  leftDrawerOpen.value = !leftDrawerOpen.value;
+}
+
+function updateDarkMode() {
+  $q.dark.set(store.persistence.darkMode);
+}
+
+onMounted(() => {
+  updateDarkMode();
+  console.log("HomeLayout mounted");
+});
+</script>
+
 <template>
   <q-layout view="hHh lpR fFf">
     <q-header elevated class="bg-primary text-white" height-hint="98">
@@ -14,7 +39,16 @@
 
       <q-tabs align="left">
         <q-route-tab to="/" label="Home" />
-        <q-route-tab to="/Login" label="Login" />
+        <q-route-tab
+          to="/Login"
+          label="Login"
+          v-if="store.persistence.showLogin"
+        />
+        <q-route-tab
+          to="../views/Preferences"
+          label="Preferences"
+          v-if="!store.persistence.showLogin"
+        />
       </q-tabs>
     </q-header>
 
@@ -38,6 +72,7 @@
     </q-footer>
   </q-layout>
 </template>
+
 
 <script setup lang="ts">
 import { ref } from "vue";

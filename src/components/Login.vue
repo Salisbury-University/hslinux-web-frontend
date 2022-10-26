@@ -1,35 +1,34 @@
 <script setup lang="ts">
-import { ref } from "vue"
+import { useAuthStore } from "../stores/auth.ts";
 
-const textName = ref("");
-const textPassword = ref("");
+const store = useAuthStore();
 
-function submit(){
-  // This needs to send a request to the backend to verify the username and password given and get the token
+function submit() {
+  store.login();
 }
-
-// Login is going to have to take the username and passwords that are submitted by the user, and send them
-// to the backend as a request to see if it is valid and what kind of access the user has to the wiki (student, 
-// faculty, admin, etc...)
-
-// Right now it only takes the username and password and stores them, going to work on sending it to the backend
-
 </script>
 
 <template>
-  <div>
-    <p>Username</p>
-    <input v-model="textName" placeHolder="Type here">
-  </div>
-  
-  <div>
-    <p>Password</p>
-    <input type="password" v-model="textPassword" placeHolder="Type here">
-  </div>
+  <!-- Conditionally render the Login input field based on the "showLogin" variable in the store -->
+  <q-page v-if="store.persistence.showLogin">
+    <!--- User ID -->
+    <div>
+      <!--- Data directly v-modeled into the "uid" value of the store, so updates in real time -->
+      <p>Username</p>
+      <input v-model="store.uid" placeHolder="Type here" />
+    </div>
 
-  <div>
-    <button @click="submit">Submit</button>
-  </div>
+    <!--- User Password -->
+    <div>
+      <!--- Data directly v-modeled into the "password" value of the store, so updates in real time -->
+      <p>Password</p>
+      <input type="password" v-model="store.password" placeHolder="Type here" />
+    </div>
+
+    <!--- Password submit -->
+    <div>
+      <!--- Uses the "submit" function defined in the pinia store -->
+      <button @click="submit">Submit</button>
+    </div>
+  </q-page>
 </template>
-
-
