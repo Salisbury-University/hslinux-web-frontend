@@ -6,10 +6,8 @@ import { usePageStore } from "../stores/markdown";
 
 const usePage = usePageStore();
 usePage.setPage();
-
-let i = Number(localStorage.index);
 </script>
 
 <template>
-  <div v-html="usePage.content[i]"></div>
+  <div v-html="usePage.content[usePage.pageIndex]"></div>
 </template>

@@ -8,6 +8,7 @@ export const usePageStore = defineStore("page", {
     return {
       name: [],
       content: [],
+      pageIndex: -1,
       persistence: useStorage("page", {
         header: {
           Authorization: "",
@@ -35,6 +36,13 @@ export const usePageStore = defineStore("page", {
     getTitle(state: any): string {
       return state.name;
     },
+
+    /**
+     *
+     */
+    getPageIndex(state: any): Number {
+      return state.pageIndex;
+    },
   },
 
   actions: {
@@ -56,6 +64,11 @@ export const usePageStore = defineStore("page", {
 
     setTitle(newName: string): void {
       this.name = newName;
+    },
+
+    setPageIndex(newPageIndex: Number) {
+      this.pageIndex = newPageIndex;
+      console.log(this.pageIndex);
     },
 
     setPage(): void {
