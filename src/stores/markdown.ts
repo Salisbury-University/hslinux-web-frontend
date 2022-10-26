@@ -68,7 +68,6 @@ export const usePageStore = defineStore("page", {
 
     setPageIndex(newPageIndex: Number) {
       this.pageIndex = newPageIndex;
-      console.log(this.pageIndex);
     },
 
     setPage(): void {
