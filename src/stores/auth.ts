@@ -52,6 +52,7 @@ export const useAuthStore = defineStore("useAuthStore", {
     logout() {
       this.persistence.token = "";
       this.persistence.showLogin = true;
+      this.persistence.darkMode = false;
     },
     setDarkMode() {
       // TODO - Send a POST request to the backend preference route, with the value that we want to set
@@ -64,11 +65,28 @@ export const useAuthStore = defineStore("useAuthStore", {
     },
     getDarkMode() {
       // TODO - Send a GET request to the backend preference route to RETRIEVE the user's dark mode pref
+      console.log("Getting Dark moded");
+
+      if (this.nonpersistence.uid == "Alice") {
+        this.persistence.darkMode = true;
+      } else if (this.nonpersistence.uid == "Bob") {
+        this.persistence.darkMode = false;
+      }
 
       http()
-        .post(this.nonpersistence.preferenceRoute, {})
-        .then((response) => {})
-        .catch(function (error) {});
+        .get(this.nonpersistence.preferenceRoute, {})
+        .then((response) => {
+          // TEMPROARY
+          // this.persistence.darkMode = true;
+          // For now, just log the response data darkmode
+          // In the future, make it so we read this and
+          // console.log(response.data.preferences.darkmode);  // Might come in as a string maybe
+          // I believe this will set the currently loaded value of darkmode to the user's pref in the database
+          // this.persistence.darkMode = response.data.darkmode;
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
     },
   },
 });

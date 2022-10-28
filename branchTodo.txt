@@ -12,6 +12,13 @@ To do this, I'm going to have to use the backend database that they've created
 
 then after that
 
+* Send a GET request with the header
+* With the header, it should be able to look up who we want to access in the database
+* After that, it will send a JSON body back with their preferences
+* We access that with "response.data.preferencese.darkmode"
+
+
+
 // TODO - Figure out how to read and write from the database
     * Try to send a post request to the backend to read data?? We should be trying to get the backend to do it
     * To do this, we need to send a post or get request to the backend with the logged in user's token

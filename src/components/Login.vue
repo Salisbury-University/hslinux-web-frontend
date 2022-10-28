@@ -1,13 +1,19 @@
 <script setup lang="ts">
+import { ref, onUpdated, getCurrentInstance } from "vue";
+import { useQuasar } from "quasar";
 import { useAuthStore } from "../stores/auth.ts";
 
 const store = useAuthStore();
-
-// TODO - Properly V-Model the auth ts stuff, when it's hardcoded it works fine
+const $q = useQuasar();
 
 function submit() {
   store.login();
+  store.getDarkMode();
 }
+
+onUpdated(() => {
+  $q.dark.set(store.persistence.darkMode);
+});
 </script>
 
 <template>
