@@ -9,6 +9,7 @@ export const usePageStore = defineStore("page", {
       name: [],
       content: [],
       pageIndex: -1,
+      arraySize: 0,
       persistence: useStorage("page", {
         header: {
           Authorization: "",
@@ -43,6 +44,10 @@ export const usePageStore = defineStore("page", {
     getPageIndex(state: any): Number {
       return state.pageIndex;
     },
+
+    getArraySize(state: any): Number {
+      return state.arraySize;
+    },
   },
 
   actions: {
@@ -70,12 +75,17 @@ export const usePageStore = defineStore("page", {
       this.pageIndex = newPageIndex;
     },
 
+    setArraySize(newArraySize: Number) {
+      this.arraySize = newArraySize;
+    },
+
     setPage(): void {
       //two http calls first is to get amount of documents second is to get individual content
       http()
         .get("/api/v1/docs")
         .then((res) => {
           const docData = res.data.docs;
+          this.arraySize = res.data.docs;
 
           //array for pages
           for (let i = 0; i < docData.length; i++) {

@@ -8,7 +8,7 @@ let pageSize = usePage.content.length; //amount of documents
 
 <template>
   <div class="list">
-    <li v-for="index in pageSize" :key="index">
+    <li v-for="index in usePage.arraySize" :key="index">
       <button @click="usePage.setPageIndex(index - 1)">
         {{ usePage.name[index - 1] }}
       </button>
