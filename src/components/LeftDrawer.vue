@@ -3,7 +3,6 @@ import { usePageStore } from "../stores/markdown";
 
 const usePage = usePageStore();
 usePage.setPage();
-let pageSize = usePage.content.length; //amount of documents
 </script>
 
 <template>

@@ -85,7 +85,7 @@ export const usePageStore = defineStore("page", {
         .get("/api/v1/docs")
         .then((res) => {
           const docData = res.data.docs;
-          this.arraySize = res.data.docs;
+          this.arraySize = docData.length;
 
           //array for pages
           for (let i = 0; i < docData.length; i++) {
