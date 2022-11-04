@@ -10,7 +10,7 @@ export const useAuthStore = defineStore("useAuthStore", {
       nonpersistence: {
         uid: " ",
         password: " ",
-        baseURL: "http://localhost:3005", // The url that the site will try to send POST and GET requests to
+        baseURL: "http://localhost:3006", // The url that the site will try to send POST and GET requests to
         loginurl: "/api/v1/auth/login",
       },
       persistence: useLocalStorage("auth", {
