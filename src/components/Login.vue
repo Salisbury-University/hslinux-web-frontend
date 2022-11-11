@@ -6,13 +6,15 @@ import { useAuthStore } from "../stores/auth.ts";
 const store = useAuthStore();
 const $q = useQuasar();
 
-function submit() {
-  store.login();
-  store.getDarkMode();
+async function submit() {
+  await store.login();
+  await store.getDarkMode();
+  $q.dark.set(store.persistence.darkMode);
 }
 
 onUpdated(() => {
-  $q.dark.set(store.persistence.darkMode);
+  //store.getDarkMode();
+  // $q.dark.set(store.persistence.darkMode);
 });
 </script>
 

@@ -15,7 +15,7 @@ export const useAuthStore = defineStore("useAuthStore", {
         preferenceRoute: "/api/v1/preferences",
       },
       persistence: useLocalStorage("auth", {
-        token: "", // Stored token for a logged in user
+        token: "x", // Stored token for a logged in user
         showLogin: true, // Controls whether pages relating to logging in/out or being logged in should be shown
         /* Preferences */
         darkMode: false,
@@ -33,14 +33,15 @@ export const useAuthStore = defineStore("useAuthStore", {
      *    In event of an error, logs the appropriate error message that was
      *      caught out to the console
      */
-    login() {
-      http()
+    async login() {
+      await http()
         .post(this.nonpersistence.loginurl, {
           uid: this.nonpersistence.uid,
           password: this.nonpersistence.password,
         })
         .then((response) => {
           this.persistence.token = response.data.token;
+
           this.persistence.showLogin = false;
         })
         .catch(function (error) {
@@ -63,29 +64,22 @@ export const useAuthStore = defineStore("useAuthStore", {
         .then((response) => {})
         .catch(function (error) {});
     },
-    getDarkMode() {
-      // TODO - Send a GET request to the backend preference route to RETRIEVE the user's dark mode pref
-      console.log("Getting Dark moded");
-
-      if (this.nonpersistence.uid == "Alice") {
-        this.persistence.darkMode = true;
-      } else if (this.nonpersistence.uid == "Bob") {
-        this.persistence.darkMode = false;
-      }
-
-      http()
-        .get(this.nonpersistence.preferenceRoute, {})
+    async getDarkMode() {
+      await http()
+        .get(this.nonpersistence.preferenceRoute, {
+          headers: {
+            Authorization: "Bearer " + this.persistence.token,
+          },
+        })
         .then((response) => {
-          // TEMPROARY
-          // this.persistence.darkMode = true;
-          // For now, just log the response data darkmode
-          // In the future, make it so we read this and
-          // console.log(response.data.preferences.darkmode);  // Might come in as a string maybe
-          // I believe this will set the currently loaded value of darkmode to the user's pref in the database
-          // this.persistence.darkMode = response.data.darkmode;
+          if (response.data.darkmode == true) {
+            this.persistence.darkMode = true;
+          } else if (response.data.darkmode == false) {
+            this.persistence.darkMode = false;
+          }
         })
         .catch(function (error) {
-          console.log(error);
+          console.error(error);
         });
     },
   },

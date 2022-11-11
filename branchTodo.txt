@@ -1,3 +1,9 @@
+NEXT - Merge this to master and then work on the POST request stuff
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
 I'm trying to make the user Dark Mode preferences save and persist throughout logins and for different users.
 
 To do this, I'm going to have to use the backend database that they've created
@@ -8,14 +14,17 @@ To do this, I'm going to have to use the backend database that they've created
 
 
 
+
 [DONE] // TODO - Figure out how to use the two dummy logins to log in without having to use the API
 
 then after that
 
+[DONE]
 * Send a GET request with the header
 * With the header, it should be able to look up who we want to access in the database
 * After that, it will send a JSON body back with their preferences
 * We access that with "response.data.preferencese.darkmode"
+
 
 
 

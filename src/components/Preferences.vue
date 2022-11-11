@@ -26,6 +26,8 @@ async function buffer() {
 onUpdated(() => {
   buffer();
 
+  // When updated, send POST request to database to update with new value
+
   $q.dark.set(store.persistence.darkMode);
 });
 </script>
@@ -38,7 +40,6 @@ onUpdated(() => {
       v-model="store.persistence.darkMode"
       id="darkMode"
       value="value"
-      @click="test"
     />
     <label for="darkMode" color="green"> Dark Mode</label><br />
     <!-- <p :text-color>asfasdfasdfas</p> -->

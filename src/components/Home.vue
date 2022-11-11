@@ -6,11 +6,6 @@ import { useQuasar } from "quasar";
 const store = useAuthStore();
 const $q = useQuasar();
 
-function submit() {
-  store.login();
-  store.getDarkMode();
-}
-
 onUpdated(() => {
   $q.dark.set(store.persistence.darkMode);
 });
