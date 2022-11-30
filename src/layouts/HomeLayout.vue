@@ -1,12 +1,14 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import LeftDrawer from "../components/LeftDrawer.vue";
+import Profile from "../components/Profile.vue";
 import { useAuthStore } from "../stores/auth";
 import { useQuasar } from "quasar";
 
 const $q = useQuasar();
 
 const leftDrawerOpen = ref(false);
+const profileOpen = ref(true);
 const store = useAuthStore();
 
 function toggleLeftDrawer() {
@@ -23,7 +25,8 @@ onMounted(() => {
 });
 
 function test() {
-  console.log("ew");
+  profileOpen.value = !profileOpen.value;
+  console.log(profileOpen.value);
 }
 </script>
 
@@ -37,14 +40,17 @@ function test() {
           Salisbury Wiki IT
           <p>{{ store.persistence.token }}</p>
         </q-toolbar-title>
-        <q-btn round to="/">
+        <q-btn round @click="test()" class="q-pa" id="profBtn">
           <q-avatar size="40px">
             <!-- TODO: change to something other than default vue logo-->
-            <img src="../assets/logo.png" />
+            <img src="../assets/profile.webp" />
           </q-avatar>
         </q-btn>
+        <q-menu parent="profBtn" transition-show="fade" target="#profBtn">
+          <Profile />
+        </q-menu>
       </q-toolbar>
-      <q-btn clickable to="/" />
+
       <q-tabs align="left">
         <q-route-tab to="/" label="Home" />
         <q-route-tab
