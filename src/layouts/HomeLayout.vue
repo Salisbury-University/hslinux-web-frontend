@@ -8,7 +8,6 @@ import { useQuasar } from "quasar";
 const $q = useQuasar();
 
 const leftDrawerOpen = ref(false);
-const profileOpen = ref(true);
 const store = useAuthStore();
 
 function toggleLeftDrawer() {
@@ -23,11 +22,6 @@ onMounted(() => {
   updateDarkMode();
   console.log("HomeLayout mounted");
 });
-
-function test() {
-  profileOpen.value = !profileOpen.value;
-  console.log(profileOpen.value);
-}
 </script>
 
 <template>
@@ -40,13 +34,13 @@ function test() {
           Salisbury Wiki IT
           <p>{{ store.persistence.token }}</p>
         </q-toolbar-title>
-        <q-btn round @click="test()" class="q-pa" id="profBtn">
+        <q-btn round id="profBtn">
           <q-avatar size="40px">
             <!-- TODO: change to something other than default vue logo-->
             <img src="../assets/profile.webp" />
           </q-avatar>
         </q-btn>
-        <q-menu parent="profBtn" transition-show="fade" target="#profBtn">
+        <q-menu transition-show="fade" target="#profBtn">
           <Profile />
         </q-menu>
       </q-toolbar>
