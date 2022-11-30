@@ -12,9 +12,9 @@ usePage.setPage();
 <template>
   <div class="list">
     <li v-for="index in usePage.arraySize" :key="index">
-      <button @click="usePage.setPageIndex(index - 1)">
+      <q-btn @click="usePage.setPageIndex(index - 1)" to="/">
         {{ usePage.name[index - 1] }}
-      </button>
+      </q-btn>
     </li>
   </div>
 </template>
