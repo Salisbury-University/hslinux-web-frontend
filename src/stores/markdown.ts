@@ -82,12 +82,7 @@ export const usePageStore = defineStore("page", {
     setPage(): void {
       //two http calls first is to get amount of documents second is to get individual content
       http()
-        .get("/api/v1/docs", {
-          headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJCb2IiLCJpYXQiOjE2Njk4MzQyNTd9.BbITFlonjgZ8vIAu09p8aCwV6Q-liMklAmbpa9m3FPs",
-          },
-        })
+        .get("/api/v1/docs")
         .then((res) => {
           const docData = res.data.docs;
 
@@ -96,12 +91,7 @@ export const usePageStore = defineStore("page", {
           //array for pages
           for (let i = 0; i < docData.length; i++) {
             http()
-              .get("/api/v1/doc/".concat(docData[i]), {
-                headers: {
-                  Authorization:
-                    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiJCb2IiLCJpYXQiOjE2Njk4MzQyNTd9.BbITFlonjgZ8vIAu09p8aCwV6Q-liMklAmbpa9m3FPs",
-                },
-              })
+              .get("/api/v1/doc/".concat(docData[i]))
               .then((response) => {
                 const markContent = response.data;
                 const metadata = markContent.metadata;
