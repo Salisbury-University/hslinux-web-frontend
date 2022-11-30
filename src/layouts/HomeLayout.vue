@@ -38,7 +38,7 @@ function test() {
           <p>{{ store.persistence.token }}</p>
         </q-toolbar-title>
         <q-btn round to="/">
-          <q-avatar size="40px" href="www.google.com">
+          <q-avatar size="40px">
             <!-- TODO: change to something other than default vue logo-->
             <img src="../assets/logo.png" />
           </q-avatar>
