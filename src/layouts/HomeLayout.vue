@@ -30,11 +30,15 @@ onMounted(() => {
         <q-btn dense flat round icon="menu" @click="toggleLeftDrawer()" />
 
         <q-toolbar-title>
-          <q-avatar>
-            <!--image goes here-->
-          </q-avatar>
           Salisbury Wiki IT
+          <p>{{ store.persistence.token }}</p>
         </q-toolbar-title>
+        <q-btn round>
+          <q-avatar size="xl">
+            <!-- TODO: change to something other than default vue logo-->
+            <img src="../assets/logo.png" />
+          </q-avatar>
+        </q-btn>
       </q-toolbar>
 
       <q-tabs align="left">
