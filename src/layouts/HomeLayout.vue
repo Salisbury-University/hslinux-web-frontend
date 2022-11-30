@@ -21,6 +21,10 @@ onMounted(() => {
   updateDarkMode();
   console.log("HomeLayout mounted");
 });
+
+function test() {
+  console.log("ew");
+}
 </script>
 
 <template>
@@ -33,14 +37,14 @@ onMounted(() => {
           Salisbury Wiki IT
           <p>{{ store.persistence.token }}</p>
         </q-toolbar-title>
-        <q-btn round>
-          <q-avatar size="xl">
+        <q-btn round to="/">
+          <q-avatar size="40px" href="www.google.com">
             <!-- TODO: change to something other than default vue logo-->
             <img src="../assets/logo.png" />
           </q-avatar>
         </q-btn>
       </q-toolbar>
-
+      <q-btn clickable to="/" />
       <q-tabs align="left">
         <q-route-tab to="/" label="Home" />
         <q-route-tab
