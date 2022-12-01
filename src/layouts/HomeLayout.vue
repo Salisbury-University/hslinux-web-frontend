@@ -30,17 +30,19 @@ onMounted(() => {
       <q-toolbar>
         <q-btn dense flat round icon="menu" @click="toggleLeftDrawer()" />
 
-        <q-toolbar-title>
-          Salisbury Wiki IT
-          <p>{{ store.persistence.token }}</p>
-        </q-toolbar-title>
+        <q-toolbar-title> Salisbury Wiki IT </q-toolbar-title>
         <q-btn round id="profBtn">
           <q-avatar size="40px">
             <!-- TODO: change to something other than default vue logo-->
             <img src="../assets/profile.webp" />
           </q-avatar>
         </q-btn>
-        <q-menu transition-show="fade" target="#profBtn">
+        <!-- Right now, is set to secondary color in 'quasar-variables.sass'  -->
+        <q-menu
+          transition-show="fade"
+          transition-duration="100"
+          target="#profBtn"
+        >
           <Profile />
         </q-menu>
       </q-toolbar>
