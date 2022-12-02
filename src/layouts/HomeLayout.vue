@@ -59,6 +59,17 @@ onMounted(() => {
           label="Preferences"
           v-if="!store.persistence.showLogin"
         />
+        <div class="search">
+          <q-form @submit="sendRequest()">
+            <q-input placeholder="Search Documents">
+              <template v-slot:append>
+                <q-btn round flat>
+                  <q-icon name="search" size="30px" />
+                </q-btn>
+              </template>
+            </q-input>
+          </q-form>
+        </div>
       </q-tabs>
     </q-header>
 
