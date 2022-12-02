@@ -12,7 +12,13 @@ usePage.setPage();
 <template>
   <div class="list">
     <li v-for="index in usePage.arraySize" :key="index">
-      <q-btn @click="usePage.setPageIndex(index - 1)" to="/">
+      <q-btn
+        unelevated
+        dense
+        text-color="blue"
+        @click="usePage.setPageIndex(index - 1)"
+        to="/"
+      >
         {{ usePage.name[index - 1] }}
       </q-btn>
     </li>

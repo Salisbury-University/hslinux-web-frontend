@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { ref, onMounted } from "vue"; //onUpdated
 import LeftDrawer from "../components/LeftDrawer.vue";
 import Profile from "../components/Profile.vue";
 import { useAuthStore } from "../stores/auth";
