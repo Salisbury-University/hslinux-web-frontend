@@ -2,6 +2,7 @@ import { defineStore } from "pinia";
 import { useStorage } from "@vueuse/core";
 import http from "../../http";
 import { marked } from "marked";
+import { useAuthStore } from "./auth";
 
 export const usePageStore = defineStore("page", {
   state: () => {
@@ -82,12 +83,15 @@ export const usePageStore = defineStore("page", {
     setPage(): void {
       //two http calls first is to get amount of documents second is to get individual content
       http()
-        .get("/api/v1/docs")
+        .get("/api/v1/docs", {
+          headers: {
+            Authorization: "Bearer " + useAuthStore().persistence.token,
+          },
+        })
         .then((res) => {
           const docData = res.data.docs;
 
           this.arraySize = docData.length;
-
 
           //array for pages
           for (let i = 0; i < docData.length; i++) {
