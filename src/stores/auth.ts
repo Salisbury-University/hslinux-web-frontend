@@ -8,8 +8,8 @@ export const useAuthStore = defineStore("useAuthStore", {
   state: () => {
     return {
       nonpersistence: {
-        uid: " ",
-        password: " ",
+        uid: "",
+        password: "",
         baseURL: "http://localhost:3006", // The url that the site will try to send POST and GET requests to
         loginurl: "/api/v1/auth/login",
       },
@@ -32,7 +32,7 @@ export const useAuthStore = defineStore("useAuthStore", {
     login() {
       // DEBUG vvv
       // This makes it so we don't need to talk with the backend to get a "real" login
-      this.persistence.showLogin = false;
+      // this.persistence.showLogin = false;
       // DEBUG ^^^
 
       http()

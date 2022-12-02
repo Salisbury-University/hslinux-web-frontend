@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { ref, onMounted } from "vue"; //onUpdated
 import LeftDrawer from "../components/LeftDrawer.vue";
+import Profile from "../components/Profile.vue";
 import { useAuthStore } from "../stores/auth";
 import { useQuasar } from "quasar";
 
@@ -29,12 +30,21 @@ onMounted(() => {
       <q-toolbar>
         <q-btn dense flat round icon="menu" @click="toggleLeftDrawer()" />
 
-        <q-toolbar-title>
-          <q-avatar>
-            <!--image goes here-->
+        <q-toolbar-title> Salisbury Wiki IT </q-toolbar-title>
+        <q-btn round id="profBtn">
+          <q-avatar size="40px">
+            <!-- TODO: change to something other than default vue logo-->
+            <img src="../assets/profile.webp" />
           </q-avatar>
-          Salisbury Wiki IT
-        </q-toolbar-title>
+        </q-btn>
+        <!-- Right now, is set to secondary color in 'quasar-variables.sass'  -->
+        <q-menu
+          transition-show="fade"
+          transition-duration="100"
+          target="#profBtn"
+        >
+          <Profile />
+        </q-menu>
       </q-toolbar>
 
       <q-tabs align="left">

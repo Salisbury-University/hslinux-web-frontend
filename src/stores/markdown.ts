@@ -12,8 +12,8 @@ export const usePageStore = defineStore("page", {
       pageIndex: -1,
       arraySize: 0,
       persistence: useStorage("page", {
-        header: {
-          Authorization: "",
+        headers: {
+          Authorization: "Bearer ",
         },
       }),
     };
@@ -85,7 +85,7 @@ export const usePageStore = defineStore("page", {
       http()
         .get("/api/v1/docs", {
           headers: {
-            Authorization: "Bearer " + useAuthStore().persistence.token,
+            Authorization: "Bearer " + useAuthStore().$state.persistence.token,
           },
         })
         .then((res) => {
@@ -96,7 +96,12 @@ export const usePageStore = defineStore("page", {
           //array for pages
           for (let i = 0; i < docData.length; i++) {
             http()
-              .get("/api/v1/doc/".concat(docData[i]))
+              .get("/api/v1/doc/".concat(docData[i]), {
+                headers: {
+                  Authorization:
+                    "Bearer " + useAuthStore().$state.persistence.token,
+                },
+              })
               .then((response) => {
                 const markContent = response.data;
                 const metadata = markContent.metadata;
@@ -107,6 +112,14 @@ export const usePageStore = defineStore("page", {
               });
           }
         });
+    },
+
+    /** When logging out, set all values to their original (this gets rid of old file buttons on sidebar when logging out) */
+    onLogout() {
+      this.name = [];
+      this.content = [];
+      this.pageIndex = -1;
+      this.arraySize = 0;
     },
   },
 });
