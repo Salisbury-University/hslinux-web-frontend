@@ -29,8 +29,10 @@ function logout() {
     </q-form>
   </div>
   <!-- if token is not set, TODO: show user info?? -->
-  <div v-if="store.$state.persistence.token" class="column">
+  <div v-if="store.$state.persistence.token" class="column q-ma-lg">
     <div>Logged in!</div>
+    <div>{{ store.nonpersistence.uid }}</div>
+    <div>Group: {{ store.nonpersistence.group }}</div>
     <q-btn @click="logout">Logout!</q-btn>
   </div>
 </template>

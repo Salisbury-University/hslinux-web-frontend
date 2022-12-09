@@ -49,11 +49,7 @@ onMounted(() => {
 
       <q-tabs align="left">
         <q-route-tab to="/" label="Home" />
-        <q-route-tab
-          to="/Login"
-          label="Login"
-          v-if="store.persistence.showLogin"
-        />
+
         <q-route-tab
           to="/Preferences"
           label="Preferences"

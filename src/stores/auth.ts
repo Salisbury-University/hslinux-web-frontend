@@ -12,6 +12,8 @@ export const useAuthStore = defineStore("useAuthStore", {
         password: "",
         baseURL: "http://localhost:3006", // The url that the site will try to send POST and GET requests to
         loginurl: "/api/v1/auth/login",
+        userInfoURL: "/api/v1/user/",
+        group: "",
       },
       persistence: useLocalStorage("auth", {
         token: "", // Stored token for a logged in user
@@ -43,9 +45,18 @@ export const useAuthStore = defineStore("useAuthStore", {
         .then((response) => {
           this.persistence.token = response.data.token;
           this.persistence.showLogin = false;
+          this.getUserInfo();
         })
         .catch(function (error) {
           //console.log(error);
+        });
+    },
+    getUserInfo() {
+      http()
+        .get(this.nonpersistence.userInfoURL + this.nonpersistence.uid)
+        .then((response) => {
+          this.nonpersistence.uid = response.data.uid;
+          this.nonpersistence.group = response.data.group;
         });
     },
     /** Logout Function : Clears the user's token, and enables the "login"
